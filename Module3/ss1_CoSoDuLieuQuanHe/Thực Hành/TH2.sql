@@ -1,0 +1,1 @@
+drop database new_database;

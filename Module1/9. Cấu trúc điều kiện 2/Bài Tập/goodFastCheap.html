@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        input:checked + .slider.round1 {
+            background-color: #195c02;
+        }
+
+        input:focus + .slider.round1 {
+            box-shadow: 0 0 1px #195c02;
+        }
+        input:checked + .slider.round2 {
+            background-color: #2196F3;
+        }
+
+        input:focus + .slider.round2 {
+            box-shadow: 0 0 1px #2196F3;
+        }
+
+        input:checked + .slider.round3 {
+            background-color: #f60000;
+        }
+
+        input:focus + .slider.round3 {
+            box-shadow: 0 0 1px #f60000;
+        }
+
+        input:checked + .slider.round1:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        }
+        input:checked + .slider.round2:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        }
+        input:checked + .slider.round3:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        }
+
+        /* Rounded sliders */
+        .slider.round1 {
+            border-radius: 34px;
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+
+        }
+
+        .slider.round1:before {
+            border-radius: 50%;
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+        .slider.round2 {
+            border-radius: 34px;
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+
+        }
+
+        .slider.round2:before {
+            border-radius: 50%;
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+        .slider.round3 {
+            border-radius: 34px;
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+
+        }
+
+        .slider.round3:before {
+            border-radius: 50%;
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+
+    </style>
+</head>
+<label class="switch">
+    <input type="checkbox" id="good" onclick="gooD()">
+    <span class="slider round1"></span>
+</label>
+<span>
+        <p><b>Good</b></p>
+    </span>
+
+<label class="switch">
+    <input type="checkbox" id="cheap" onclick="cheaP()">
+    <span class="slider round2"></span>
+</label>
+<span>
+        <p><b>Cheap</b></p>
+    </span>
+<label class="switch">
+    <input type="checkbox" id="fast" onclick="fasT()">
+    <span class="slider round3"></span>
+</label>
+<span>
+        <p><b>Fast</b></p>
+    </span>
+<script>
+
+    function gooD() {
+        let tot = document.getElementById("good").checked;
+        let re = document.getElementById("cheap").checked;
+        let nhanh = document.getElementById("fast").checked;
+        console.log(tot,re,nhanh);
+        if (re && nhanh) {
+            if (Math.random() < 0.5) {
+                document.getElementById("cheap").checked = false;
+            } else {
+                document.getElementById("fast").checked = false;
+            }
+        }
+    }
+    function cheaP() {
+        let tot = document.getElementById("good").checked;
+        let re = document.getElementById("cheap").checked;
+        let nhanh = document.getElementById("fast").checked;
+        console.log(tot,re,nhanh);
+        if (tot && nhanh) {
+            if (Math.random() < 0.5) {
+                document.getElementById("good").checked = false
+            } else {
+                document.getElementById("fast").checked = false
+            }
+        }
+    }
+    function fasT() {
+        let tot = document.getElementById("good").checked;
+        let re = document.getElementById("cheap").checked;
+        let nhanh = document.getElementById("fast").checked;
+        console.log(tot,re,nhanh);
+        if (tot && re) {
+            if (Math.random() < 0.5) {
+                document.getElementById("cheap").checked = false
+            } else {
+                document.getElementById("fast").checked = false
+            }
+        }
+    }
+
+</script>
+</body>
+</html>

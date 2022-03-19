@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="CSS/Formsignup.css">
+    <title>Sign Up</title>
+</head>
+<body>
+
+    <form>
+        <table style="background-color: yellow"  class="center" cellspacing="5">
+            <tr style="background-color: mediumseagreen">
+                <td colspan="2"><h2>ĐĂNG KÝ HỌC VIÊN</h2></td>
+            </tr>
+            <tr>
+                <th>Họ và tên</th>
+                <td><input type="text" name="name"></td>
+            </tr>
+            <tr>
+                <th>Ngày sinh</th>
+                <td><input type="text" name="birthday"></td>
+            </tr>
+            <tr>
+                <th>Giới tính</th>
+                <td><input type="radio" name="sex"> Nam <input type="radio" name="sex"> Nữ</td>
+            </tr>
+            <tr>
+                <th>Địa chỉ</th>
+                <td><textarea name="address" rows="3" cols="20"></textarea></td>
+            </tr>
+            <tr>
+                <th>Lớp</th>
+                <td><select name="class">
+                    <option value="ChonLop">-Chọn Lớp-</option>
+                    <option value="ChonLop">-Lớp 1-</option>
+                    <option value="ChonLop">-Lớp 2-</option>
+                    <option value="ChonLop">-Lớp 3-</option>
+                    <option value="ChonLop">-Lớp 4-</option>
+                    <option value="ChonLop">-Lớp 5-</option>
+
+                </select></td>
+
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td><input type="text" name="email"></td>
+            </tr>
+            <tr>
+                <th>Điện thoại</th>
+                <td><input type="text" name="phone"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" name="Singup" value="Đăng ký"> <input type="reset" name="reset" value="Nhập lại"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

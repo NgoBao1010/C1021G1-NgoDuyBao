@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Palindrome</title>
+</head>
+<body>
+    <script>
+
+        //Cách 1:
+        // function isPalindrome(s) {
+        //     let check;
+        //     let doDai = s.length;
+        //     for (let i = 0; i < doDai;i++){
+        //         if (s[i] === s[doDai-1]){
+        //             doDai--;
+        //             check = true;
+        //         }else {
+        //             check = false;
+        //             break;
+        //         }
+        //     }
+        //     return check;
+        // }
+        // let n = prompt("Nhập chuỗi cần kiểm tra.");
+        // let chuoi = n.split("");
+        // let kiemTra = isPalindrome(chuoi);
+        // if (kiemTra){
+        //     alert("Đây là chuỗi đối xứng.");
+        // }else {
+        //     alert("Đây k phải là chuỗi đối xứng.");
+        // }function isPalindrome(s) {
+
+
+        //Cách 2:
+        function isPalindrome(s) {
+        let check;
+        let doDai = s.length;
+        for (let i = 0; i < doDai/2;i++){
+            if (s[i] === s[doDai-i-1]){
+                check = true;
+            }else {
+                check = false;
+                break;
+            }
+        }
+        return check;
+        }
+        let n = prompt("Nhập chuỗi cần kiểm tra.");
+        let chuoi = n.split("");
+        let kiemTra = isPalindrome(chuoi);
+        if (kiemTra){
+            alert("Đây là chuỗi đối xứng.");
+        }else {
+            alert("Đây k phải là chuỗi đối xứng.");
+        }
+    </script>
+</body>
+</html>

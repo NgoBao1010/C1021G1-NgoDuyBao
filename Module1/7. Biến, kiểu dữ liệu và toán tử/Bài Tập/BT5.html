@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi tiền tệ</title>
+</head>
+<style>
+    table{
+        text-align: center;
+        margin-right: auto;
+        margin-left: auto;
+        table-layout: fixed;
+    }
+</style>
+<body>
+    <form>
+        <table>
+            <tr>
+                <th colspan="2" style="width: auto">Amount</th>
+                <th colspan="2">From Currency</th>
+                <th colspan="2">To Currency</th>
+            </tr>
+            <tr>
+                <td colspan="2-" style="text-align: left" ><div><input id="amo" type="text" name="Amount" value="" style="width: 200px;"></div></td>
+                <td colspan="2">
+                    <select id="frCur">
+                        <option name="frCurrency" value="VND">Việt Nam</option>
+                        <option name="frCurrency" value="USD">USD</option>
+                    </select>
+                </td>
+                <td colspan="2">
+                    <select id="toCur">
+                        <option  name="toCurrency" value="USD">USD</option>
+                        <option  name="toCurrency" value="VND">Việt Nam</option>
+                    </select>
+                </td>
+                <td>
+                    <button type="button" name="convert" onclick="conVert()" style="background-color: blueviolet; color: white">
+                        Convert
+                    </button>
+                </td>
+            </tr>
+            <tr style="color: blue; text-align: left">
+                <td id="res" style="width: auto"></td>
+
+            </tr>
+        </table>
+    </form>
+    <script>
+        function conVert() {
+            let n1 = parseInt(document.getElementById("amo").value);
+            let n2 = document.getElementById("frCur").value;
+            let n3 = document.getElementById("toCur").value;
+            if (n2 == "VND" && n3 == "USD"){
+                document.getElementById("res").innerHTML = 'Result: ' + n1 / 24000;
+            }else if (n2 == "USD" && n3 == "VND"){
+                document.getElementById("res").innerHTML = 'Result: ' + n1 * 24000;
+            }
+        }
+    </script>
+</body>
+</html>

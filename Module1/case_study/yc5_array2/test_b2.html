@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        function check(number){
+            let sum = 0;
+            for (let i = 0;i < number;i++){
+                if (number % i === 0){
+                    sum += i;
+                }
+            }
+            if (sum === number){
+                return true;
+            }
+            return false;
+        }
+        let number = parseInt(prompt("Nhập số cần kiểm tra: "));
+        alert(check(number));
+    </script>
+</body>
+</html>

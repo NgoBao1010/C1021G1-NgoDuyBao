@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm kí tự khác nhau</title>
+</head>
+<body>
+    <script>
+        let s = prompt("Nhập xâu kí tự: ");
+        let str = s.split("");
+        let s1 = [];
+        let count = 0;
+        for (let i = 0; i < str.length;i++){
+            let check = false;
+            for (let j = 0; j <= s1.length;j++){
+                if(str[i] === s1[j]){
+                    check = true;
+                    break;
+                }
+            }
+            if(check === false){
+                s1.push(str[i])
+                count++;
+            }
+        }
+        document.write("Xâu nhập vào là: " + str + "<br>");
+        document.write("Các phần tử khác nhau là: " + s1.join(" ") + "<br>");
+        document.write("Số phần tử khác nhau là: " + count);
+    </script>
+</body>
+</html>

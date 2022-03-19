@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT1</title>
+</head>
+<body>
+
+    <script>
+        function kiemTraSoNguyenTo(number) {
+            let dem = 0 ;
+            for(let i = 0; i <= number;i++){
+                if ( number % i === 0){
+                    dem++;
+                }
+            }
+            if (dem === 2){
+                return true;
+            }
+            return false;
+        }
+        // Cách nhập vào 1 số bất kì nhỏ hơn 10000 và kiểm tra có phải số nguyên tố không:
+        let num = parseInt(prompt("Nhập vào số: "));
+        if (num <= 10000){
+            if (kiemTraSoNguyenTo(num) === true){
+                alert("Là số nguyên tố.")
+            }else {
+                alert("Không phải số nguyên tố.")
+            }
+        }else {
+            alert("Số bạn nhập không có trong dữ liệu.");
+        }
+
+
+        // Cách in ra 100 số nguyên tố đầu tiên.
+        let dem100 = 0;
+        let num = 1;
+        while (true){
+            if (kiemTraSoNguyenTo(num) === true){
+                document.write(num + "<br>");
+                dem100++;
+            }
+            if (dem100 === 100){ //in ra 10000 số thì lag máy
+                break;
+            }
+            num++;
+        }
+
+    </script>
+</body>
+</html>

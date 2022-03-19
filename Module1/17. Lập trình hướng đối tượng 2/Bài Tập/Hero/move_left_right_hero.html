@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hero</title>
+</head>
+<body>
+    <div id="hero"></div>
+    <script>
+        class Hero{
+            constructor(image,speed,size) {
+                this.image = image;
+                this.speed = speed;
+                this.size = size;
+                this.top = 0;
+                this.left = 0;
+            }
+            getHero(){
+                return '<img src="'+ this.image + '" width="'+ this.size +'" height="'+this.size+'" style="top: '+this.top+'px; left: '+this.left+'px;position: absolute;" >';
+            }
+            moveRight(speed){
+                return this.left += this.speed;
+            }
+            moveBot(speed){
+                return this.top += this.speed;
+            }
+
+        }
+        let hero = new Hero('hero.png',150,200);
+        if(hero.left < window.innerWidth - hero.size){
+            hero.moveBot()
+        }
+        document.getElementById("hero").innerHTML = hero.getHero();
+    </script>
+</body>
+</html>

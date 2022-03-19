@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>B5</title>
+</head>
+<body>
+
+    <script>
+        let donGia;
+        let soLuong
+        let number;
+        let total = 0;
+        do{
+
+            number = parseInt(prompt("MENU \n"  +
+                "1.Cafe \n" +
+                "2.Cam Vắt \n" +
+                "3.Nước ép cà rốt \n" +
+                "4.Nước ép cà chua \n" +
+                "5.Nước lọc \n" +
+                "6.Nước dừa \n" +
+                "Mời chọn thức uống theo số: "));
+            switch (number) {
+                        case 1:
+                            alert("Cafe có giá: 10,000vnđ");
+                            soLuong = parseInt(prompt("Số lượng: "));
+                            donGia = soLuong * 10000;
+                            total += donGia;
+                            document.write("Đơn giá Cafe là: " + donGia + "<br>");
+                            break;
+                        case 2:
+                            alert("Cam vắt có giá: 20,000vnđ");
+                            soLuong = parseInt(prompt("Số lượng: "));
+                            donGia = soLuong * 20000;
+                            total += donGia;
+                            document.write("Đơn giá cam vắt là: " + donGia + "<br>");
+                            break;
+                        case 3:
+                            alert("Nước ép cà rốt có giá: 15,000vnđ");
+                            soLuong = parseInt(prompt("Số lượng: "));
+                            donGia = soLuong * 15000;
+                            total += donGia;
+                            document.write("Đơn giá nước ép cà rốt là: " + donGia + "<br>");
+                            break;
+                        case 4:
+                            alert("Nước ép cà chua có giá: 15,000vnđ");
+                            soLuong = parseInt(prompt("Số lượng: "));
+                            donGia = soLuong * 15000;
+                            total += donGia;
+                            document.write("Đơn giá nước ép cà chua là: " + donGia + "<br>");
+                            break;
+                        case 5:
+                            alert("Nước lọc có giá: 5,000vnđ");
+                            soLuong = parseInt(prompt("Số lượng: "));
+                            donGia = soLuong * 5000;
+                            total += donGia;
+                            document.write("Đơn giá nước lọc là: " + donGia + "<br>");
+                            break;
+                        case 6:
+                            alert("Nước dừa có giá: 13,000vnđ");
+                            soLuong = parseInt(prompt("Số lượng: "));
+                            donGia = soLuong * 13000;
+                            total += donGia;
+                            document.write("Đơn giá nước dừa là: " + donGia + "<br>");
+                            break;
+                        case 7:
+                            alert("Cảm ơn quý khách, hẹn gặp lại.");
+                            document.write("Tổng tiền của quý khách là: " + total + "<br>");
+                            break;
+                        default:
+                            alert("MENU \n"  +
+                                "1.Cafe \n" +
+                                "2.Cam Vắt \n" +
+                                "3.Nước ép cà rốt \n" +
+                                "4.Nước ép cà chua \n" +
+                                "5.Nước lọc \n" +
+                                "6.Nước dừa \n" +
+                                "Mời chọn thức uống theo số: \n" +
+                                "Vui lòng nhập món");
+                    }
+        }while (number !== 7);
+    </script>
+</body>
+</html>
+
+

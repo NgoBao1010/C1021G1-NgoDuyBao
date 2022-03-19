@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tom_and_Jerry</title>
+</head>
+<body>
+    <script>
+        class Animal{
+            constructor(name,weight,speed) {
+                this.name = name;
+                this.weight = weight;
+                this.speed = speed;
+            }
+        }
+        class Tom extends Animal{
+            constructor(name,weight,speed) {
+                super(name,weight,speed);
+            }
+            growl(){
+                console.log(this.name+ " said: Meo Meo Meo." )
+            }
+            catchJerry(Jerry){
+                if(Jerry === 1){
+                    if (this.speed > Jerry.speed){
+                        return "Bắt được rồi nhaaaa.";
+                    }else {
+                        return "Chạy nhanh ghê baaa.";
+                    }
+                }else if(Jerry > 1){
+                    return "Nhiều quá lười bắt."
+                }
+
+            }
+            eatJerry(Jerry){
+                if (Jerry.status === "Sống"){
+                    console.log("Ăn nha, ăn nha.");
+                    Jerry.status = "Chết";
+                    this.weight++;
+                }else {
+                    return console.log("Thúi quắc.");
+                }
+            }
+        }
+        class Jerry extends Animal{
+            constructor(name,weight,speed) {
+                super(name,weight,speed);
+                this.status = "Sống";
+            }
+            growl(){
+                console.log(this.name+ " said: Chít Chít Chít." );
+            }
+        }
+        let tom = new Tom("Tom",20,10);
+        let jerry = new Jerry("Jerry",10,5);
+        console.log(tom,jerry);
+        console.log(tom.catchJerry(jerry));
+        console.log(tom.eatJerry(jerry));
+        console.log(jerry)
+        console.log(tom);
+
+    </script>
+</body>
+</html>

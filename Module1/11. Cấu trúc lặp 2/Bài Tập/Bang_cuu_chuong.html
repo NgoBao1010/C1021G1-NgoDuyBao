@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <script>
+        let bangCuuChuong = "<table border ='1' style='text-align: left'>";
+        for (i = 1; i <= 9; i++){
+            bangCuuChuong = bangCuuChuong + "<tr>";
+            for (j = 2; j <= 9; j++){
+                bangCuuChuong = bangCuuChuong + "<td width='300px'>" + `${j} x ${i}` + " = "  + j * i + "</td>";
+            }
+            bangCuuChuong = bangCuuChuong + "</tr>";
+        }
+        bangCuuChuong = bangCuuChuong + "</table>";
+        document.write(bangCuuChuong);
+    </script>
+</body>
+</html>

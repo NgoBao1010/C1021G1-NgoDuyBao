@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT6</title>
+</head>
+<body>
+    <script>
+        /*
+            Hoa hồng:
+            doanh số từ 100tr trở lên, hoa hồng 15%
+            doanh số từ 60tr - 99tr, hoa hồng 10%
+            doanh số ít hơn 60tr, hoa hồng 5%
+         */
+        let sales = parseInt(prompt('Nhập vào doanh số tháng này :'));
+        if(sales >= 100000000){
+            let hoaHong = sales * 0.15;
+            alert('Chúc mừng bạn đạt doanh số,hoa hồng tháng này là: ' + hoaHong );
+        }else if(sales >= 60000000){
+            let hoaHong = sales * 0.1;
+            alert('Hoa hồng tháng này là: ' + hoaHong);
+        }else {
+            let hoaHong = sales * 0.05;
+            alert('Hoa hồng tháng này là: ' + hoaHong);
+        }
+    </script>
+</body>
+</html>

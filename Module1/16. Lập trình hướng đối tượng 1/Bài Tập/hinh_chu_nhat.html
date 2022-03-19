@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hình Chữ Nhật</title>
+</head>
+<body>
+    <canvas id="DemoCanvas"></canvas>
+    <script>
+        class Rectangle {
+            constructor(height,width) {
+                this.height = height;
+                this.width = width;
+            }
+            tinhDienTich(){
+                let dienTich = this.height * this.width
+                return dienTich;
+            }
+            tinhChuVi(){
+                let chuVi = (this.width + this.height ) * 2;
+                return chuVi;
+            }
+            veHinhChuNhat(){
+                let ctx = document.getElementById("DemoCanvas").getContext('2d');
+                ctx.fillStyle='#8d3220';
+                ctx.fillRect(10, 40, this.width, this.height);
+            }
+
+        }
+        let height = parseInt(prompt("Nhập chiều dài: "))
+        let width = parseInt(prompt("Nhập chiều rộng: "))
+        let recta = new Rectangle(height,width);
+        alert("Diện tích hình chữ nhật là: " + recta.tinhDienTich() + ". Chu vi hình chữ nhật là: " + recta.tinhChuVi());
+        recta.veHinhChuNhat();
+    </script>
+</body>
+</html>

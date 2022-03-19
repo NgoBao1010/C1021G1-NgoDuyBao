@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT5</title>
+</head>
+<body>
+    <script>
+        function isMin(num) {
+            let min = num[0];
+            for (let i = 0; i < num.length; i++) {
+                if (num[i] < min) {
+                    min = num[i];
+                }
+            }
+            return min;
+        }
+        let number = [];
+        let n = parseInt(prompt("Nhập số lượng số muốn kiểm tra: "));
+        for (let i = 0;i < n ;i++){
+            number[i] = parseInt(prompt("Nhập vào số thứ " + (0 + i)));
+        }
+        let result = isMin(number);
+        document.write("Số nhập vào là: " + number + "<br>");
+        document.write("Số nhỏ nhất trong dãy số trên là: " + result);
+    </script>
+</body>
+</html>

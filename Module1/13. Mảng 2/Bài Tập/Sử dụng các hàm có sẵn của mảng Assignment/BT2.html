@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT2</title>
+</head>
+<body>
+    <script>
+        let num = prompt("nhập vào dãy số: ");
+        let n = [num[0]];
+        for (let i = 1; i <= num.length; i++){
+            if (num[i - 1] % 2 === 0 && num[i] % 2 === 0){
+                n.push('-',num[i]);
+            }else {
+                n.push(num[i]);
+            }
+        }
+        document.write("Dãy số nhập vào là "+ num +"<br>")
+        document.write(n.join(""));
+    </script>
+</body>
+</html>

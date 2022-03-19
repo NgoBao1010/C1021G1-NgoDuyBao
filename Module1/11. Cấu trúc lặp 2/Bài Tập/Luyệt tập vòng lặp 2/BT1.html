@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT1</title>
+</head>
+<body>
+    <script>
+        let dem = prompt("Nhập số dãy fibonacci muốn in: ");
+        let a = 0, b = 1;
+        let fibo = "";
+        for (let i = 1; i <= dem; i++){
+            document.write(fibo + a + " ");
+            let c = a + b;
+            a = b;
+            b = c;
+        }
+    </script>
+</body>
+</html>

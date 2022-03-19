@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT2</title>
+</head>
+<body>
+    <h1>Meter and Feet Convert</h1>
+    <label>Meter </label><input type="text" style="text-align: right" oninput="meterToFeet(this.value)"> <label> Feet is: </label><span id="result"></span><br><br>
+    <label>Feet </label><input type="text"  style="text-align: right" oninput="feetToMeter(this.value)"> <label> Meter is: </label><span id="result2"></span>
+    <script>
+        function meterToFeet(met) {
+            met = parseFloat(met);
+            document.getElementById("result").innerHTML = 3.279*met;
+        }
+        function feetToMeter(foot) {
+            foot = parseFloat(foot);
+            document.getElementById("result2").innerHTML = 0.305*foot;
+        }
+    </script>
+</body>
+</html>

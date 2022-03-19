@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>B1</title>
+</head>
+<body>
+    <script>
+        let luong = parseInt(prompt("Nhập lương trước thuế: "));
+        let tienThue;
+        let luongRong;
+        if (luong >= 15000000){
+            tienThue = luong * 0.2;
+            luongRong = luong - tienThue;
+        }else if(luong >= 7000000){
+            tienThue = luong *  0.1;
+            luongRong = luong - tienThue;
+        }else {
+            tienThue = luong * 0.05;
+            luongRong = luong - tienThue;
+        }
+        alert("Tiền thuế của bạn là: " + tienThue + " lương ròng là: " + luongRong);
+    </script>
+</body>
+</html>

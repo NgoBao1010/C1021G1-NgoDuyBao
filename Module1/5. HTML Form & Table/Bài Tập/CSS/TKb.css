@@ -1,0 +1,25 @@
+.week{
+    text-align: center;
+    background-size: 10px;
+}
+.day{
+    background-color: yellow;
+}
+.day2{
+    background-color: orange;
+}
+.table{
+    margin-right: auto;
+    margin-left: auto;
+    border-collapse: collapse;
+}
+.tr{
+    color: blue;
+    text-align: right;
+}
+.td1{
+    text-align: left;
+}
+.td2{
+    text-align: right;
+}

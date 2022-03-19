@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT5</title>
+</head>
+<body>
+    <script>
+        let chuoi1 = prompt("nhập chuỗi 1: ");
+        let chuoi2 = prompt("Nhập chuỗi 2: ");
+        let boo = true;
+        document.write("Chuỗi 1 : " + chuoi1 + " <br>");
+        document.write("Chuỗi 2 : " + chuoi2 + " <br>");
+        //Cách 1:
+        for( let i = 0; i < chuoi1.length; i++){
+            if (chuoi1[i] === chuoi2[i]){
+                boo = true;
+                break;
+            }else {
+                boo = false;
+            }
+        }
+        if(boo == true){
+            document.write("2 chuỗi giống nhau.")
+        }else {
+            document.write("2 chuỗi khác nhau.")
+        }
+        //Cách 2:
+        // if( chuoi1.length !== chuoi2.length){
+        //     document.write("2 chuỗi trên khác nhau.");
+        // }else {
+        //     for(let i = 0; i < chuoi1.length; i++){
+        //         for(let j = 0; j < chuoi2.length; j++){
+        //             if(chuoi1[i] === chuoi2[j]){
+        //                 boo = true;
+        //             }else {
+        //                 boo = false;
+        //             }
+        //         }
+        //     }
+        //     if(boo === true){
+        //         document.write("2 chuỗi giống nhau.")
+        //     }else {
+        //         document.write("2 chuỗi khác nhau.")
+        //     }
+        // }
+    </script>
+</body>
+</html>

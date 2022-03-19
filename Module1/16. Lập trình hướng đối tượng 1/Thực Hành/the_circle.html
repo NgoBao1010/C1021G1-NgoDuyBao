@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Circle</title>
+</head>
+<body>
+    <script>
+        let Circle = function (radius) {
+            this.radius = radius;
+            this.getRadius = function () {
+                return radius;
+            }
+            this.getArea = function () {
+                return Math.PI * radius * radius;
+            }
+        }
+        let n = prompt("Nhập bán kính vào đây: ")
+        let circle = new Circle(n);
+        let r = circle.getRadius();
+        let s = circle.getArea();
+        alert("Diện tích hình tròn có bán Kính là: " + r + " Diện Tích: " + s);
+    </script>
+</body>
+</html>

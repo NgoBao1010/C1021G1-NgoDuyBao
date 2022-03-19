@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Remote and Tivi</title>
+</head>
+<body>
+    <script>
+        class Remote{
+            constructor(tivi) {
+                this.tivi = tivi;
+                this.status = true;
+            }
+            turnOn(){
+                this.tivi.status = true;
+            }
+            turnOff(){
+                this.tivi.status = false;
+            }
+            changeVolumeUp(){
+                this.tivi.setVolumeUp();
+            }
+            changeVolumeDown(){
+                this.tivi.setVolumeDown();
+            }
+            changeChanel(chanel){
+                this.tivi.setChanel(chanel);
+                console.log("Đã chuyển sang kênh " + this.tivi.getChanel());
+            }
+        }
+        class Television{
+            constructor(chanel,volume) {
+                this.chanel = chanel;
+                this.volume = volume;
+                this.status = true;
+            }
+            setChanel(chanel){
+               this.chanel = chanel;
+            }
+            getChanel(){
+                return this.chanel;
+            }
+            setVolumeUp(){
+                    this.volume += 10;
+                    return console.log("Volume tăng lên " + this.volume  );
+
+            }
+            setVolumeDown(){
+                    this.volume -= 5;
+                    return console.log("Volume giảm xuống " + this.volume);
+
+            }
+            getVolume(){
+                return this.volume;
+            }
+            checkOnOff(){
+                if (this.status === true){
+                    console.log("Tivi đang được bật.");
+                    console.log("Hiện tại đang mở kênh "+ this.chanel);
+                    console.log("Volume hiện tại là: "+ this.volume);
+                }else {
+                    console.log("Tivi đã tắt.");
+                }
+            }
+        }
+        let tivi = new Television("HTV7",90);
+        let remote = new Remote(tivi);
+        remote.turnOff()
+        tivi.checkOnOff()
+        remote.turnOn()
+        tivi.checkOnOff()
+        remote.changeChanel("HTV2")
+        tivi.getChanel()
+        remote.changeVolumeUp()
+        tivi.getVolume()
+        remote.changeVolumeDown()
+        tivi.getVolume()
+        remote.turnOff()
+        tivi.checkOnOff()
+
+
+
+    </script>
+</body>
+</html>

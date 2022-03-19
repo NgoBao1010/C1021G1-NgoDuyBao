@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT10</title>
+</head>
+<body>
+    <script>
+        /*
+            Giá điện sinh hoạt EVN miền Trung (Đồng/kWh)
+            Bậc 1: Cho kWh từ 0-50		    1.510,2
+            Bậc 2: Cho kWh từ 51 – 100		1.560,6
+            Bậc 3: Cho kWh từ 101 – 200		1.812,6
+            Bậc 4: Cho kWh từ 201 – 300		2.282,4
+            Bậc 5: Cho kWh từ 301 – 400		2.834
+            Bậc 6: Cho kWh từ 401 trở lên	2.927
+         */
+        let chuDien = parseInt(prompt('Nhập vào số chữ điện dùng trong tháng :'));
+        if(chuDien <= 50){
+            chiPhi = chuDien * 1510.2;
+            alert('Tháng này bạn đã dùng ' + chuDien + ' kWh,số tiền điện là ' + chiPhi );
+        }else if(chuDien <= 100){
+            chiPhi = ((chuDien - 50) * 1560.6) + (50 * 1510.2);
+            alert('Tháng này bạn đã dùng ' + chuDien + ' kWh,số tiền điện là ' + chiPhi );
+        }else if(chuDien <= 200){
+            chiPhi = ((chuDien - 100) * 1812.6) + (50 * 1560.6) + (50 * 1510.2);
+            alert('Tháng này bạn đã dùng ' + chuDien + ' kWh,số tiền điện là ' + chiPhi );
+        }else if(chuDien <= 300){
+            chiPhi = ((chuDien - 200) * 2282.4) + (100 * 1812.6) + (50 * 1560.6) + (50 * 1510.2);
+            alert('Tháng này bạn đã dùng ' + chuDien + ' kWh,số tiền điện là ' + chiPhi );
+        }else if(chuDien <= 400){
+            chiPhi = ((chuDien - 300) * 2834) + (100 * 2282.4) + (100 * 1812.6) + (50 * 1560.6) + (50 * 1510.2);
+            alert('Tháng này bạn đã dùng ' + chuDien + ' kWh,số tiền điện là ' + chiPhi );
+        }else {
+            chiPhi = ((chuDien - 400) * 2927) + (100 * 2834) + (100 * 2282.4) + (100 * 1812.6) + (50 * 1560.6) + (50 * 1510.2);
+            alert('Tháng này bạn đã dùng ' + chuDien + ' kWh,số tiền điện là ' + chiPhi );
+        }
+    </script>
+
+</body>
+</html>

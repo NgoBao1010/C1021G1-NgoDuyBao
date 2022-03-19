@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT2</title>
+</head>
+<body>
+    <script>
+        let number = parseInt(prompt("Số muốn tính giai thừa: "));
+        let giaiThua = 1;
+        if(number < 0){
+            alert("Nhập số lớn hơn hoặc bằng 0.");
+        }else if(number == 0 || number == 1){
+            document.write("Giai thừa của " + number + " = " + giaiThua);
+        }else {
+            let i = 1;
+            while (i <= number){
+                giaiThua *= i;
+                i++;
+            }
+            document.write("Giai thừa của " + number + " = " + giaiThua);
+        }
+    </script>
+</body>
+</html>

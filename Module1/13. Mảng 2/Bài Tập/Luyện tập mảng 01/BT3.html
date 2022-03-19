@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT2</title>
+</head>
+<body>
+<script>
+    let num = [2,4,5,12,62,6,22,21,10,9];
+    let max = num[0];
+    let i;
+    let viTri;
+    let trungBinh = 0;
+    for ( i = 0;i < num.length;i++){
+        if(num[i] > max){
+            max = num[i];
+            viTri = i;
+        }
+        trungBinh += num[i]/num.length;
+    }
+    document.write("Max trong dãy 10 số cho trước là " + max + " nằm ở vị trí " + viTri + "<br>");
+    document.write("Giá trị trung bình của các phần tử trong mảng là: " + trungBinh);
+
+</script>
+</body>
+</html>

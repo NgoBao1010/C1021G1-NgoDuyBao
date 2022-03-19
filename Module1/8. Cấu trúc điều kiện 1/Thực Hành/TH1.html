@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let years = parseInt(prompt("Nhập năm vào đây"));
+        if (years % 4 == 0){
+            if (years % 100 == 0){
+                if (years % 400 == 0){
+                    alert("Năm " + years + " là năm nhuận.")
+                }else {
+                    alert("Năm " + years + " không phải là năm nhuận.")
+                }
+            }else {
+                alert("Năm " + years + " là năm nhuận.")
+            }
+        }else {
+            alert("Năm " + years + " không phải năm nhuận.")
+        }
+    </script>
+</body>
+</html>

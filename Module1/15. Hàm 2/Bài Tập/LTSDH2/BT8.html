@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT7</title>
+</head>
+<body>
+    <script>
+        function swap(mang) {
+            let doiCho = mang.reverse();
+            return doiCho;
+        }
+        let n = prompt("Nhập vào số số nguyên trong mảng")
+        let so = [];
+        for (let i = 0;i < n;i++){
+            so[i] = prompt("Nhập vào số thứ " + i);
+        }
+        alert("Số nhập vào là "+ so );
+        result = swap(so);
+        alert("Sau khi đổi chỗ là: " + result);
+    </script>
+</body>
+</html>

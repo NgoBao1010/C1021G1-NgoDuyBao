@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT3</title>
+</head>
+<body>
+    <script>
+        let chu = prompt("nhập vào chữ: ");
+        let chuHoa = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        let chuThuong = 'abcdefghijklmnopqrstuvwxyz';
+        let inRa = [];
+        for (let i = 0; i < chu.length; i++){
+            if(chuHoa.indexOf(chu[i]) !== -1){
+                inRa.push(chu[i].toLowerCase());
+            }else if(chuThuong.indexOf(chu[i]) !== -1){
+                inRa.push(chu[i].toUpperCase());
+            }else{
+            inRa.push(chu[i]);
+            }
+        }
+        document.write(inRa.join(""));
+
+    </script>
+</body>
+</html>

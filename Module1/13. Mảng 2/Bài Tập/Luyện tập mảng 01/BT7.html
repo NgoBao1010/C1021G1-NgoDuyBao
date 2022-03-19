@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT7</title>
+</head>
+<body>
+    <script>
+        let number = [];
+        let newNum = [];
+        for (let i = 0; i < 10;i++){
+            number[i] = Number(prompt("Nhập vào số nguyên thứ: " + i ));
+        }
+        document.write("Dãy số nhập vào là: " + number + "<br>");
+
+        let vNumber = Number(prompt("Nhập vào số nguyên V: "));
+        for(let i = 0; i < number.length; i++){
+            if(vNumber !== number[i]){
+                newNum.push(number[i]);
+            }
+        }
+        document.write("Dãy số sau khi xóa số V nếu V nằm trong mảng: " + newNum);
+    </script>
+</body>
+</html>

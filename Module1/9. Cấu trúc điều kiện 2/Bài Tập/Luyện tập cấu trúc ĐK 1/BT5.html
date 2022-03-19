@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT5</title>
+</head>
+<body>
+    <script>
+        // Điểm bài kiểm tra
+        let a = parseInt(prompt('Nhập vào điểm bài kiểm tra :'));
+        // Điểm thi giữa kỳ
+        let b = parseInt(prompt('Nhập vào điểm thi giữa kỳ :'));
+        // Điểm thi cuối kỳ
+        let c = parseInt(prompt('Nhập vào điểm thi cuối kỳ :'));
+        // Điểm trung bình
+        let d = (a+b+c)/3;
+        if (d >= 9){
+            alert('Xếp loại A');
+        }else if (d >= 7){
+            alert('Xếp loại B');
+        }else if(d >= 5){
+            alert('Xếp loại C');
+        }else {
+            alert('Xếp loại F');
+        }
+    </script>
+</body>
+</html>

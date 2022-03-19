@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT8</title>
+</head>
+<body>
+    <script>
+        let number = [];
+        let min = 0;
+        let newNum = [];
+        for (let i = 0; i < 10;i++){
+            number[i] = Number(prompt("Nhập vào số nguyên thứ: " + i ));
+        }
+        document.write("Dãy số mới nhập vào là: " + number + "<br>");
+        for(let i = 0; i < number.length; i++){
+            for (let j = i + 1; j < number.length; j++){
+                if(number[i] < number[j]){
+                    min = number[i];
+                    number[i] = number[j];
+                    number[j] = min;
+                }
+                newNum = number;
+            }
+        }
+        document.write("Dãy số mới là: " + newNum);
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ball</title>
+</head>
+<body>
+    <form>
+        <img id="trAiBong" src="ball.jfif">
+        <p>Ấn vào nút Click here để quả bóng xoay qua phải</p>
+        <input type="button" value="Left" onclick="moveLeft()">
+        <input type="button" value="Right" onclick="moveRight()">
+    </form>
+    <script>
+        let ball = document.getElementById("trAiBong");
+        function init() {
+
+            ball.style.position = 'relative';
+            ball.style.left = '0px';
+        }
+        function moveRight() {
+            ball.style.left = parseInt(ball.style.left) + 10 + 'px';
+        }
+        function moveLeft() {
+            ball.style.left = parseInt(ball.style.left) - 10 + 'px';
+        }
+        window.onload = init;
+    </script>
+</body>
+</html>

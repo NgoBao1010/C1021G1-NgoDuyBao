@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hãy thử đoán số</title>
+</head>
+<body>
+    <input type="button" value="Chơi" onclick="choI()">
+    <script>
+        function choI() {
+            let number = prompt("Muốn đoán trong khoảng nào.?");
+            let random = Math.floor(Math.random() * number);
+            let dudoan = prompt("Nhập số dự đoán");
+            if(dudoan == random){
+                alert("Chúc mừng bạn đoán đúng");
+            }else {
+                while (dudoan != random){
+                    alert("Sai gòi,sai gòi. " );
+                    dudoan = prompt("Nhập lại đi.");
+                }
+                alert("Chúc mừng đoán đúng rồi.");
+            }
+        }
+    </script>
+</body>
+</html>

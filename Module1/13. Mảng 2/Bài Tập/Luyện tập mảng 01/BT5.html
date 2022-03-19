@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT5</title>
+</head>
+<body>
+    <script>
+        let number = [];
+        let inRa = [];
+        for (let i = 0; i < 10;i++){
+            number[i] = Number(prompt("Nhập vào số thứ: " + i ));
+            if(number[i] < 0){
+                inRa.push(number[i]);
+            }
+        }
+        document.write("Dãy số nhập vào là: " + number + "<br>");
+        document.write("Số âm trong dãy số nhập vào là: " + inRa);
+    </script>
+</body>
+</html>

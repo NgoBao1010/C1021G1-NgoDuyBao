@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>B2</title>
+</head>
+<body>
+    <script>
+        // let string = "cabca";
+        // let count = 0;
+        // for (let i = 0;i < string.length; i++){
+        //     if (string[i] !== string){
+        //         count++;
+        //         console.log(string[i])
+        //     }
+        // }
+        // console.log(count)
+
+
+        function plusMinus() {
+            // Write your code here
+            let arr = [-4,3,-9,0,4,1];
+            let demSoDuong = 0;
+            let demSoAm = 0;
+            let demSoKhong = 0;
+            let n = arr.length;
+            for (let i = 0;i < n;i++){
+                if (arr[i] === 0){
+                    demSoKhong++;
+                }else if(arr[i] < 0){
+                    demSoAm++;
+                }else {
+                    demSoDuong++;
+                }
+            }
+
+            let tiLeDuong = (demSoDuong / n).toFixed(6);
+            let tiLeAm = (demSoAm/n).toFixed(6);
+            let tiLeKhong = (demSoKhong/n).toFixed(6);
+            console.log(tiLeDuong);
+            console.log(tiLeAm);
+            console.log(tiLeKhong);
+        }
+        plusMinus();
+    </script>
+</body>
+</html>

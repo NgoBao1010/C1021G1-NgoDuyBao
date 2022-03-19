@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mobile</title>
+</head>
+<body>
+    <script>
+        class Mobile{
+            constructor(pin) {
+                this.pin = pin;
+                this.dangSoanThao = "";
+                this.hopThuDen = "";
+                this.hopThuGoi = "";
+                this.statusIs0N = true;
+            }
+            checkBattery(){
+                if (this.pin <= 0){
+                    return this.statusIs0N = false;
+                }else if (1 < this.pin < 20){
+                    return "Pin yếu hãy mau sạc pin."
+                }
+            }
+            turnOff(){
+                return this.statusIs0N = false;
+            }
+            turnOn(){
+                return this.statusIs0N = true;
+            }
+
+            chargeBattery(){
+                if (this.pin === 100){
+                    return "Battery Full";
+                }else if (this.pin < 100){
+                    return "------ Đang sạc Pin"
+                    }
+                }
+
+            typingMess(mess){
+                if (this.pin <= 0){
+                    return this.statusIs0N = false;
+                }else {
+                    return this.dangSoanThao += mess;
+                    this.darainBattery();
+                }
+            }
+
+            sendMess(dienThoaiKhac){
+                if (this.pin <= 0){
+                    return this.statusIs0N = false;
+                }else {
+                    dienThoaiKhac.receiveMess(this.dangSoanThao);
+                    this.hopThuGoi = this.dangSoanThao;
+                    this.dangSoanThao = "";
+                    this.darainBattery()
+                }
+            }
+
+            receiveMess(mess){
+                if (this.pin <= 0){
+                    return this.statusIs0N = false;
+                }else {
+                    this.hopThuDen += mess;
+                    this.darainBattery();
+                }
+            }
+
+            darainBattery(){
+                this.pin -= 1;
+            }
+        }
+        let iphone = new Mobile(100)
+        let nokia = new Mobile(100)
+        iphone.typingMess("Alo Alo");
+        iphone.sendMess(nokia);
+        // console.log(nokia);
+        nokia.typingMess("Có gì không")
+        nokia.sendMess(iphone);
+        console.log(iphone)
+        nokia.typingMess("Hú Hú");
+        nokia.sendMess(iphone);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let dem = 0;
+        let tong = 0;
+        let display = "";
+        for(let i = 1 ; ; i++){
+            if(i % 7 === 0 ){
+                display += i + " ";
+                tong += i;
+                dem++;
+            }
+            if( dem === 30){
+                break;
+            }
+        }
+        document.write("30 số chia hết cho 7 đầu tiên " + display + "<br>");
+        document.write("Tổng bằng " + tong);
+    </script>
+</body>
+</html>

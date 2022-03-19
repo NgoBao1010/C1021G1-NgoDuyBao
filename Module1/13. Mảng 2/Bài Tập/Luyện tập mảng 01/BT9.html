@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT9</title>
+</head>
+<body>
+    <script>
+        let a = [];
+        let b = [];
+        for (let i = 0; i < 10; i++){
+            a[i] = Number(prompt("Nhập dãy số mảng a:"));
+        }
+        document.write("Dãy số mảng a là: " + a + "<br>");
+        for (let i = 0; i < 10; i++){
+            b[i] = Number(prompt("Nhập dãy số mảng b:"));
+        }
+        document.write("Dãy số mảng b là: " + b + "<br>");
+        let c = a.concat(b);
+        document.write("Nối mảng a và b,ta được: " + c);
+    </script>
+</body>
+</html>

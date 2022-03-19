@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT5</title>
+</head>
+<body>
+    <script>
+        let dem = 20;
+        let a = 0, b = 1;
+        let fibo = "";
+        let tong = 0;
+        for (let i = 1; i <= dem; i++){
+            fibo += a + " ";
+            let c = a + b;
+            a = b;
+            b = c;
+            tong += a;
+        }
+        document.write("20 số fibonacci đầu tiên: " + fibo + "<br>");
+        document.write("Tổng là " + tong);
+
+    </script>
+</body>
+</html>

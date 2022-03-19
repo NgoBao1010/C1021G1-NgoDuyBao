@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog Cá Nhân</title>
+</head>
+<body>
+<fieldset>
+    <legend>Blog Information</legend>
+    <h3>Are you sure.???</h3>
+    <form th:action="@{/delete}" th:object="${blog}" method="post">
+        <input type="hidden" th:field="*{id}">
+        <div>
+            <label>Tác giả</label>
+            <input readonly type="text" th:field="*{blogName}">
+        </div>
+        <div>
+            <label>Nội Dung</label>
+            <input readonly type="text" th:field="*{content}">
+        </div>
+        <div>
+            <label>Mô Tả</label>
+            <textarea readonly th:field="*{blogDescription}"/>
+        </div>
+        <input  type="submit" value="Delete">
+    </form>
+
+</fieldset>
+</body>
+</html>

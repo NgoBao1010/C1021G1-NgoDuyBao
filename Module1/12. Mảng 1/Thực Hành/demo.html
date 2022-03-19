@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let cars = ['BMW' , 'Vinfast' , 'Mer' , 'Audi','Rolroyce','Lamborghini','Ferrari',];
+        for (let i = 1; i <= cars.length; i++){
+            if (i === Math.floor(Math.random()*cars.length) && i !== cars.length - 1){
+               cars[i] = prompt('nhập phần tử muốn chèn vào đây ' + i);
+               break;
+            }
+        }
+        document.write(cars);
+    </script>
+</body>
+</html>

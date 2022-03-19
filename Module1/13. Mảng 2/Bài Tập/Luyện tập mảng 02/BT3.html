@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT3</title>
+</head>
+<body>
+    <script>
+        let manG = [];
+        let deM = 0;
+        for (let i = 0; i < 6; i++){
+            manG[i] = prompt("Nhập vào đây: ");
+        }
+        document.write("Mảng gồm: " + manG+ "<br>")
+        for (let i = 0; i < manG.length;i++){
+            if (manG[i] % 2 === 0 ||manG[i] % 2 === 1){
+                deM ++;
+            }
+        }
+        document.write("Trong mảng có " + deM + " kí tự số<br>")
+    </script>
+</body>
+</html>

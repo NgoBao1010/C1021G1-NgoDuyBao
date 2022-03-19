@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>B3</title>
+</head>
+<body>
+    <script>
+        let m = prompt("Nhập số hàng của ma trận.");
+        let a = [];
+        for (let i = 0; i < m; i++) {
+            a[i] = new Array();
+            let n = prompt("Nhập số cột của ma trận");
+            for (let j = 0; j < n; j++) {
+                a[i][j] = parseInt(prompt("Nhập phần tử ở vị trí " + i + " phần tử thứ " + j));
+            }
+        }
+        function arrayMax() {
+            let max = a[0][0];
+            for (let i = 0; i < a.length;i++){
+                for (let j = 0;j < a[i].length;j++){
+                    if (a[i][j] > max){
+                        max = a[i][j]
+                    }
+                }
+            }
+            console.log("SỐ lớn nhất trong mảng trên là: " + max)
+        }
+
+        function arrayMin() {
+            let min = a[0][0];
+            for (let i = 0; i < a.length;i++){
+                for (let j = 0;j < a[i].length;j++){
+                    if (a[i][j] < min){
+                        min = a[i][j]
+                    }
+                }
+            }
+            console.log("SỐ nhỏ nhất trong mảng trên là: " + min);
+        }
+        console.log("Mảng nhập vào là: " + a);
+        arrayMin()
+        arrayMax()
+
+
+    </script>
+</body>
+</html>

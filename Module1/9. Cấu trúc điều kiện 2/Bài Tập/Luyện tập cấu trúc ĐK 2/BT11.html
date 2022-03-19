@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT11</title>
+</head>
+<body>
+    <script>
+        /*
+        25% thuế thu nhập nếu lương từ 15 triệu trở lên.
+        15% thuế thu nhập nếu lương từ 7 đến dưới 15 triệu.
+        10% thuế thu nhập nếu lương dưới 7 triệu.
+         */
+        let luong = parseInt(prompt('Thu nhập tháng này là :'));
+        let luongThucNhan = luong - thue;
+        if(luong >= 15000000){
+            thue = luong * 0.25;
+            alert('Thuế thu nhâp tháng này là ' + thue + '. Lương thực nhận là: ' + luongThucNhan);
+        }else if(luong > 7000000){
+            thue = luong * 0.15;
+            alert('Thuế thu nhâp tháng này là ' + thue + '. Lương thực nhận là: ' + luongThucNhan);
+        }else {
+            thue = luong * 0.1;
+            alert('Thuế thu nhâp tháng này là ' + thue + '. Lương thực nhận là: ' + luongThucNhan);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT9</title>
+</head>
+<body>
+    <script>
+        function checkKiTu(kitu,mang) {
+            let count = 0;
+            for (let i = 0;i < mang.length;i++ ){
+                for (let j = 0; j < mang[i].length;j++){
+                    if (kitu === mang[i][j]){
+                        count++;
+                    }
+                }
+            }
+            if (count !== 0) {
+                return count;
+            }
+            return -1;
+
+        }
+        let num = prompt("Nhập số chuỗi muốn thêm vào mảng")
+        let mang2 = [];
+        for (let i = 0;i < num;i++){
+            mang2[i] = prompt("Nhập phần tử thứ: " + i);
+        }
+        let kiTu = prompt("Nhập kí tự vào đây");
+        let check = checkKiTu(kiTu,mang2)
+        if (check > 0){
+            document.write("Kí tự " + kiTu + " có " + check + " lần xuất hiện.");
+        }else {
+            alert(check);
+        }
+
+
+    </script>
+</body>
+</html>

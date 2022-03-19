@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TH2</title>
+</head>
+<body>
+    <h1>Temprerature Converter</h1>
+    <p>Type a value the Fahrenheit field to convert the value to Celcius:</p>
+    <label>Fahrenheit </label><input type="number" id="inPutDoF" placeholder="Fahrenheit" oninput ="nhapDoF(this.value)">
+    <p>Celcius: <span id="result"></span></p>
+    <script>
+        function nhapDoF(valNumber) {
+            valNumber = parseFloat(valNumber);
+            document.getElementById("result").innerHTML = (valNumber - 32)/1.8;
+        }
+    </script>
+</body>
+</html>

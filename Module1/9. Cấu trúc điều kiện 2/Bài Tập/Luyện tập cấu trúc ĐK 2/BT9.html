@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT9</title>
+</head>
+<body>
+    <script>
+        let a = parseInt(prompt('Nhập vào cạnh a :'));
+        let b = parseInt(prompt('Nhập vào cạnh b :'));
+        let c = parseInt(prompt('Nhập vào cạnh c :'));
+        if (a,b,c < 0){
+            alert("a,b,c không phải cạnh của tam giác.");
+        }else if(a + b > c && a + c > b && b + c > a){
+            alert('a,b,c là cạnh của tam giác')
+        }else {
+            alert('a,b,c không phải là cạnh của tam giác.');
+        }
+    </script>
+</body>
+</html>

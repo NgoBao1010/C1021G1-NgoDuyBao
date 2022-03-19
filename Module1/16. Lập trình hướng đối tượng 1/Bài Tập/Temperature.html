@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Temperature</title>
+</head>
+<body>
+    <script>
+        class Temperature{
+            constructor(C) {
+                this.doC = C;
+            }
+            transF(){
+                let doF = (this.doC * 1.8) + 32;
+                return doF;
+            }
+            transKevin(){
+                let doKen = this.doC + 273.15;
+                return doKen;
+            }
+        }
+        let nhietDo = parseInt(prompt("Nhập số độ C muốn chuyển đổi vào đây: "));
+        let trans = new Temperature(nhietDo);
+        alert("Từ " + nhietDo + "°C sang F là: " + trans.transF() + "°F.")
+        alert("Từ " + nhietDo + "°C sang Kevin  là: " + trans.transKevin() + "°K.");
+    </script>
+</body>
+</html>

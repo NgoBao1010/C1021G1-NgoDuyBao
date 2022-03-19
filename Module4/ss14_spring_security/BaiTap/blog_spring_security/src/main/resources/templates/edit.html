@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog Cá Nhân</title>
+</head>
+<body>
+<p>
+    <a th:href="@{/list}">Back to list</a>
+</p>
+    <fieldset>
+        <legend>Blog Information</legend>
+        <form th:action="@{/edit}" th:object="${blog}" method="post">
+            <input type="hidden" th:field="*{id}">
+            <div>
+                <label>Tác giả</label>
+                <input type="text" th:field="*{blogName}">
+            </div>
+            <div>
+                <label>Nội Dung</label>
+                <input type="text" th:field="*{content}">
+            </div>
+            <div>
+                <label>Mô Tả</label>
+                <textarea th:field="*{blogDescription}" />
+            </div>
+            <input  type="submit" value="Update">
+            <input type="reset" value="Reset">
+        </form>
+
+    </fieldset>
+</body>
+</html>

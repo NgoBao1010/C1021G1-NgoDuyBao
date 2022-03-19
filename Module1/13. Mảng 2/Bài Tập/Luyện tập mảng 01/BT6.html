@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT6</title>
+</head>
+<body>
+    <script>
+        let number = [];
+        let boo = false;
+        for (let i = 0; i < 10;i++){
+            number[i] = Number(prompt("Nhập vào số nguyên thứ: " + i ));
+        }
+        let vNumber = Number(prompt("Nhập vào số nguyên V: "));
+        for(let i = 0; i < number.length; i++){
+            if(vNumber === number[i]){
+                boo = true;
+            }
+        }
+        if(boo === true){
+            document.write("V is in the array.");
+        }else {
+            document.write("V is not the array.");
+        }
+
+
+    </script>
+</body>
+</html>

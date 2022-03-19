@@ -1,0 +1,57 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: TechCare
+  Date: 2/14/2022
+  Time: 10:57 AM
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <title>Edit Product</title>
+</head>
+<center>
+<body>
+    <h1>Edit product</h1>
+    <p>
+        <c:if test='${message != null}'>
+            <span class="message">${message}</span>
+        </c:if>
+    </p>
+    <p>
+        <a href="/products">Back to product list</a>
+    </p>
+    <form method="post" action="/products?action=edit">
+        <fieldset>
+            <legend>Product Information</legend>
+            <table>
+                <tr>
+                    <td>Id: </td>
+                    <td><input type="text" name="id" readonly value="${product.getId()}"></td>
+                </tr>
+                <tr>
+                    <td>Product name: </td>
+                    <td><input type="text" name="productname"  value="${product.getProductName()}"></td>
+                </tr>
+                <tr>
+                    <td>Price: </td>
+                    <td><input type="text" name="price"  value="${product.getPrice()}"></td>
+                </tr>
+                <tr>
+                    <td>Description: </td>
+                    <td><input type="text" name="description"  value="${product.getDescription()}"></td>
+                </tr>
+                <tr>
+                    <td>Producer: </td>
+                    <td><input type="text" name="producer"  value="${product.getProducer()}"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="Update"></td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+</body>
+</center>
+</html>

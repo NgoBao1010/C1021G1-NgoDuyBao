@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>B2</title>
+</head>
+<body>
+    <script>
+        let m = prompt("Nhập số hàng của ma trận.");
+        let a = [];
+        let b = [];
+        function soNguyenTo() {
+            for (let i = 0; i < m; i++) {
+                a[i] = new Array();
+                let n = prompt("Nhập số cột của ma trận");
+                for (let j = 0; j < n; j++) {
+                    a[i][j] = parseInt(prompt("Nhập phần tử ở vị trí " + i + " phần tử thứ " + j));
+                }
+            }
+            console.log(a);
+            for (let i = 0;i < a.length;i++){
+                for (let j = 0;j < a[i].length;j++){
+                    let countSNT = 0;
+                    for (let k = 1;k <= a[i][j];k++){
+                        if (a[i][j] % k === 0){
+                            countSNT++;
+                        }
+                    }
+                    if (countSNT === 2){
+                        b.push(a[i][j]);
+                    }
+                }
+            }
+            return b;
+        }
+        console.log(soNguyenTo().join(" "));
+        console.log(b.length);
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Máy tính bỏ túi</title>
+</head>
+<style>
+    .maytinh{
+        width:180px;
+        height:200px;
+        background-color: #eaedef;
+        top:20px;
+        margin:0 auto;
+        position:relative;
+    }
+    .manhinh{
+        text-align: center;
+    }
+    .he_thong,.con_so{
+        text-align: center;
+        width:10px;
+        height:10px;
+        margin: 15px;
+        float:left;
+        border-width: 0;
+        font-weight:bold;
+        font-size:16px
+    }
+
+</style>
+<body>
+    <div id="maYtInh" class="maytinh">
+        <div class="manhinh">
+            <p><input type="text" name="manhinh" style="height: 20px; text-align: right " id="mAnHinh"></p>
+        </div>
+        <div id="ban_phim">
+            <button type="button" class="con_so" id="1" onclick="anVao('1')" value="1">1</button>
+            <button type="button" class="con_so" id="2" onclick="anVao('2')" value="2">2</button>
+            <button type="button" class="con_so" id="3" onclick="anVao('3')" value="3">3</button>
+            <button type="button" class="he_thong" id="+" onclick="anVao('+')" value="+">+</button>
+            <button type="button" class="con_so" id="4" onclick="anVao('4')" value="4">4</button>
+            <button type="button" class="con_so" id="5" onclick="anVao('5')" value="5">5</button>
+            <button type="button" class="con_so" id="6" onclick="anVao('6')" value="6">6</button>
+            <button type="button" class="he_thong" id="-" onclick="anVao('-')" value="-">-</button>
+            <button type="button" class="con_so" id="7" onclick="anVao('7')" value="7">7</button>
+            <button type="button" class="con_so" id="8" onclick="anVao('8')" value="8">8</button>
+            <button type="button" class="con_so" id="9" onclick="anVao('9')" value="9">9</button>
+            <button type="button" class="he_thong" id="*" onclick="anVao('*')" value="&times;">&times;</button>
+            <button type="button" class="he_thong" id="C" onclick="xoaManHinh()" value="">C</button>
+            <button type="button" class="con_so" id="0" onclick="anVao('0')" value="0">0</button>
+            <button type="button" class="he_thong" id="=" onclick="tinhToan('=')" value="=">=</button>
+            <button type="button" class="he_thong" id="/" onclick="anVao('/')" value="/">&#247;</button>
+        </div>
+    </div>
+    <script>
+        // Xóa màn hình
+        function xoaManHinh() {
+            document.getElementById("mAnHinh").value = "";
+        }
+        // Ấn vào màn hình xuất hiện nút
+        function anVao(value) {
+            document.getElementById("mAnHinh").value = document.getElementById("mAnHinh").value + value;
+        }
+        // Tính toán đánh giá rồi trả kết quả.
+        function tinhToan() {
+            let a = document.getElementById("mAnHinh").value;
+            let b = eval(a);
+            document.getElementById("mAnHinh").value = b;
+        }
+    </script>
+</body>
+</html>

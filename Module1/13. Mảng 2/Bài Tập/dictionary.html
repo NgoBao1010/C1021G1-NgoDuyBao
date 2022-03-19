@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dictionary</title>
+</head>
+<body>
+    <h1> Từ Điển </h1>
+    <input type="text" id="engLish" style="text-align: right">
+    <input type="button" onclick="transLate()" value="Dịch">
+    <p id="vietNamese"></p>
+    <script>
+        let tiengAnh = document.getElementById("engLish");
+        let TA = ["Banana","Flower","Car","Computer","Mobile"];
+        let TV = ["Quả Chuối","Hoa","Ô tô","Máy tính bàn","Điện thoại di động"];
+        let check = false;
+        function transLate() {
+            for(let i = 0;i < TA.length;i++){
+                if (TA[i] == tiengAnh.value){
+                    check = true;
+                    document.getElementById("vietNamese").innerHTML = TV[i];
+                    break;
+                }else{
+                    check = false;
+                }
+            }
+            if (!check){
+                alert("không có dữ liệu.");
+            }
+        }
+
+    </script>
+</body>
+</html>

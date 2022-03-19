@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>B3</title>
+</head>
+<body>
+    <script>
+        let tuSo = [5,2,5,4,5];
+        let mauSo = [6,3,4,3,2];
+        let index = 0;
+        for (let i = 1;i < tuSo.length;i++){
+            if (tuSo[index] * mauSo[i] < tuSo[i] * mauSo[index]){
+                index = i;
+            }
+        }
+        console.log("Ở vị trí " + tuSo[index] + " / " + mauSo[index] + " có chỉ số bằng: " + index);
+    </script>
+</body>
+</html>

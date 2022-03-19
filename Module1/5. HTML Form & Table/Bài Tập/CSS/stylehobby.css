@@ -1,0 +1,28 @@
+.table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+td{
+    color: orangered;
+    font-family: "Courier New";
+}
+th{
+    color: cornflowerblue;
+    font-family: "Courier New";
+}
+h2{
+    color: white;
+    font-family: "Times New Roman";
+    font-size: medium;
+    text-align: center;
+    margin: 0;
+}
+form{
+    background-color: aqua;
+    width: 430px;
+    height: 180px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+}

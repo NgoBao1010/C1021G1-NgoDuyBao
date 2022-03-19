@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HCN</title>
+</head>
+<body>
+    <script>
+        let cao = parseInt(prompt("Nhập chiều cao"));
+        let rong = parseInt(prompt("Nhập chiều rộng"));
+        for(let i = 1; i <= cao;i++){
+            for (let j = 1;j <= rong;j++){
+                if (i === 1 || i === cao || j === 1 || j === rong){
+                    document.write("*");
+                }else {
+                    document.write("&ensp;");
+                }
+            }
+            document.write("<br>");
+        }
+    </script>
+</body>
+</html>

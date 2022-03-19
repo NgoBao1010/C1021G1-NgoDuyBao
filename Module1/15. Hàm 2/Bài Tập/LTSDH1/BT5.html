@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT5</title>
+</head>
+<body>
+    <script>
+        function ngoiSao(star) {
+            let superStar = ["Polaris","Aldebaran", "Deneb", "Vega", "Altair", "Dubhe","Regulus"];
+            let conste = ["Ursa","Minor","Taurus","Cygnus","Lyra","Aquila","Ursa Major","Leo"];
+            for (let i = 0;i< superStar.length;i++){
+                if(star === superStar[i]){
+                    return conste[i];
+                }
+            }
+            return "";
+        }
+        let tenNgoiSao = prompt("Nhập tên ngôi sao muốn tìm.");
+        let sao = ngoiSao(tenNgoiSao);
+        if (tenNgoiSao !== ""){
+            if(sao === ""){
+                alert("Không có dữ liệu");
+            }else {
+                document.write("Tên ngôi sao bạn nhập là " + tenNgoiSao + " tương ứng với sao " + sao);
+            }
+        }else {
+            alert("Không có ngôi sao nào hiển thị.");
+        }
+    </script>
+</body>
+</html>

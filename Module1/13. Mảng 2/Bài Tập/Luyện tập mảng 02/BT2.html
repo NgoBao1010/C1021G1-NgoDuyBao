@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT2</title>
+</head>
+<body>
+    <script>
+        let kiTu = ['c', 's', 'c', '2', '6', '1'];
+        let first = 0;
+        let last = kiTu.length-1;
+        document.write("Kí tự ban đầu: " + kiTu + "<br>");
+
+        while (first < last) {
+            let b = kiTu[first];
+            kiTu[first] = kiTu[last];
+            kiTu[last] = b;
+            first++;
+            last--;
+        }
+        document.write("Kí tự sau khi thay đổi "+ kiTu);
+
+    </script>
+</body>
+</html>

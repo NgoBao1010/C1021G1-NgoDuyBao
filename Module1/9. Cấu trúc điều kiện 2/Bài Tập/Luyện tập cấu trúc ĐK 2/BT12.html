@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT12</title>
+</head>
+<body>
+    <script>
+        /*
+            số tháng vay: 6,9,12,24.
+            lãi tương ứng theo tháng cho vay: 5,7,12,12%
+            2083
+         */
+        let soTienVay = parseInt(prompt("Nhập số tiền vay:"));
+        let soThangVay = parseInt(prompt("Nhập số tháng vay:"));
+
+        switch (soThangVay) {
+            case (6):
+                laiHangThang = soTienVay * (0.05/12);
+                traHangThang = soTienVay/soThangVay + laiHangThang;
+                tongCong = traHangThang * soThangVay;
+                document.writeln("Lãi hàng tháng: " + laiHangThang);
+                document.writeln("<br> Trả hàng tháng: " + traHangThang);
+                document.writeln("<br> Tổng cộng cuối kì: " + tongCong);
+                break;
+            case (9):
+                laiHangThang = soTienVay * (0.07/12);
+                traHangThang = soTienVay/soThangVay + laiHangThang;
+                tongCong = traHangThang * soThangVay;
+                document.writeln("Lãi hàng tháng: " + laiHangThang);
+                document.writeln("<br>Trả hàng tháng: " + traHangThang);
+                document.writeln("<br>Tổng cộng cuối kì: " + tongCong);
+                break;
+            case (12):
+            case (24):
+                laiHangThang = soTienVay * (0.12/12);
+                traHangThang = soTienVay/soThangVay + laiHangThang;
+                tongCong = traHangThang * soThangVay;
+                document.writeln("Lãi hàng tháng: " + laiHangThang);
+                document.writeln("<br>Trả hàng tháng: " + traHangThang);
+                document.writeln("<br>Tổng cộng cuối kì: " + tongCong);
+                break;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT2</title>
+</head>
+<body>
+    <script>
+        function dienTich(r,Pi) {
+            return r * r * Pi;
+        }
+        function chuVi(r,Pi) {
+            return r * 2 * Pi;
+        }
+        let pi = 3.14;
+        let banKinh = parseInt(prompt("Nhập vào bán kính hình tròn"));
+        s = dienTich(banKinh,pi);
+        c = chuVi(banKinh,pi)
+        document.write("Diện tích hình tròn là: " + s + "<br>");
+        document.write("Chu vi hình tròn là: " + c);
+    </script>
+</body>
+</html>

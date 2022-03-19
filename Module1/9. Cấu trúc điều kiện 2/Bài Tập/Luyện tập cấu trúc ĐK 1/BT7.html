@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT7</title>
+</head>
+<body>
+    <script>
+        /*
+            cước cố định 30000/tháng
+            50 phút đầu tiên 400/phút
+            150 phút tiếp theo 300/phút
+            từ phút thứ 200 trở đi 200/phút.
+         */
+        let soPhut = parseInt(prompt('Nhập vào số phút gọi: '));
+        let coDinh = 30000;
+        if(soPhut == 0){
+            alert("Tiền cước tháng này là :" + coDinh);
+        }else if(soPhut > 0){
+            if (soPhut > 200){
+                chiPhi = (soPhut - 200) * 200 + (150 * 300) + (50 * 400) + coDinh;
+                alert("Tiền cước tháng này là: " + chiPhi);
+            }else if(soPhut > 50){
+                chiPhi = (soPhut - 50) * 300 + (400 * 50) + coDinh;
+                alert("Tiền cước tháng này là: " + chiPhi);
+            }else{
+                chiPhi = soPhut * 400 + coDinh;
+                alert("Tiền cước tháng này là: " + chiPhi);
+            }
+        }
+    </script>
+</body>
+</html>

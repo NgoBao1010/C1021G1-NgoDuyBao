@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Caculator</title>
+</head>
+<body>
+    <h2>Caculator</h2>
+    <form>
+        <div><input id="inp1" name="nhap" type="text" value="">  <input id="inp2" type="text" name="nhap" value=""></div><br>
+        <div>
+            <button type="button" onclick="add()" name="button" value="">Addition(+)</button>
+            <button type="button" onclick="sub()" name="button" value="">Subtraction(-)</button>
+            <button type="button" onclick="multi()" name="button" value="">Multiplication(X)</button>
+            <button type="button" onclick="divi()" name="button" value="">Division(/)</button>
+        </div><br><br>
+        <div id="outp"></div>
+    </form>
+    <script>
+
+        function add() {
+            let a = parseInt(document.getElementById("inp1").value);
+            let b = parseInt(document.getElementById("inp2").value);
+            document.getElementById("outp").innerHTML = "Result Addition: " + (a + b);
+        }
+        function sub() {
+            let a = parseInt(document.getElementById("inp1").value);
+            let b = parseInt(document.getElementById("inp2").value);
+            document.getElementById("outp").innerHTML = "Result Subtraction: " + (a-b);
+        }
+        function multi() {
+            let a = parseInt(document.getElementById("inp1").value);
+            let b = parseInt(document.getElementById("inp2").value);
+            document.getElementById("outp").innerHTML = "Result Multiplication: " + (a*b);
+        }
+        function divi() {
+            let a = parseInt(document.getElementById("inp1").value);
+            let b = parseInt(document.getElementById("inp2").value);
+            document.getElementById("outp").innerHTML = "Result Division: " + (a/b);
+        }
+    </script>
+</body>
+</html>

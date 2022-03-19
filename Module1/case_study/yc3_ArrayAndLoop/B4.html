@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>B4</title>
+</head>
+<body>
+    <script>
+        let number = [0,1,2,3,4,5,6,7,8,9];
+        let numberString = ["Không","Một","Hai","Ba","Bốn","Năm","Sáu","Bảy","Tám","Chín"];
+        let num = prompt("Nhập số vào");
+        let numStr = num.split("");
+        let inRa = [];
+        for (let i = 0; i < number.length;i++){
+            for (let j = 0;j < numStr.length; j++){
+                if (numStr[j] == number[i]){
+                    inRa.push(numberString[i]);
+                }
+            }
+
+        }
+        alert(inRa.join(" "));
+    </script>
+</body>
+</html>
