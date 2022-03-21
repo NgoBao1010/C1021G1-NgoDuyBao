@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+</head>
+<body>
+<table class="table" border="1">
+    <div>
+        <h2 style="color: blue;text-align: center">Search</h2>
+        <input type="text" id="inputSearch" autocomplete="off" placeholder="Search Summary" >
+    </div>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Content</th>
+        <th>Description</th>
+        <th>Sumary</th>
+    </tr>
+    </thead>
+    <tbody>
+    </tbody>
+    <button id="load">Tải Thêm</button>
+</table>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        let totalShow = 2 ;
+        let blogs = [];
+        function pushBlog(i){
+            let tr = [] ;
+            tr.push('<tr>');
+            tr.push('<td>' + blogs[i].id + '</td>');
+            tr.push('<td>' + blogs[i].content + '</td>');
+            tr.push('<td>' + blogs[i].blogDescription + '</td>');
+            tr.push('<td>' + blogs[i].summary + '</td>');
+            tr.push('</tr>');
+            $('.table').append($(tr.join('')));
+        }
+
+        $(document).ready(function () {
+            $.ajax({
+                url : "http://localhost:8080/api/blog",
+                type : "GET",
+                dataType : "json",
+                success : function (data) {
+                    blogs = data;
+                    for (let  i = 0 ; i < 2; i++) pushBlog(i);
+                }
+            })
+        })
+
+
+        $(document).ready(function () {
+            $("#loadmore").click(function () {
+                totalShow += 2;
+
+                pushBlog(totalShow - 2);
+                pushBlog(totalShow - 1);
+            })
+        })
+
+        $("#inputSearch").keyup(function () {
+            let value = $(this).val();
+            $("table").empty();
+            $.ajax({
+                url:"http://localhost:8080/api/search?summary="+value,
+                type:"GET",
+                dataType:"json",
+                success:function (data) {
+                    let tr =[];
+                    for (let i=0;i<data.length;i++){
+                        tr.push("<tr>")
+                        tr.push("<td>"+ data[i].id +"</td>")
+                        tr.push("<td>"+ data[i].content +"</td>")
+                        tr.push("<td>"+ data[i].blogDescription +"</td>")
+                        tr.push("<td>"+ data[i].summary +"</td>")
+                        tr.push("</tr>")
+
+                    }
+                    $("table").append((tr.join("")));
+
+                }
+            })
+
+        })
+
+    })
+</script>
+</body>
+</html>
