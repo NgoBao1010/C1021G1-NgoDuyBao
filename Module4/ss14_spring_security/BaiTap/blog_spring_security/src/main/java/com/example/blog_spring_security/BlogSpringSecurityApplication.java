@@ -9,6 +9,7 @@ public class BlogSpringSecurityApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(BlogSpringSecurityApplication.class, args);
+
     }
 
 }

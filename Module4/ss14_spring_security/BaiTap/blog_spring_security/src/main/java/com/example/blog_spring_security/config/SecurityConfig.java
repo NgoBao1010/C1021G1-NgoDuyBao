@@ -11,6 +11,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @Configuration
 @EnableWebSecurity
@@ -24,8 +25,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(myUserDetailService)
-                .passwordEncoder(passwordEncoder());
+        auth.userDetailsService(myUserDetailService).passwordEncoder(passwordEncoder());
+//        auth.inMemoryAuthentication().withUser("user").password("abdclsmmt0906").roles("USER");
+//        auth.inMemoryAuthentication().withUser("admin").password("abdclsmmt1010").roles("ADMIN");
     }
 
     @Override
@@ -34,7 +36,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .formLogin()
                 .defaultSuccessUrl("/list").permitAll()
                 .and()
-                .authorizeRequests().anyRequest().authenticated();
+                .authorizeRequests()
+                .antMatchers("/list").permitAll()
+                .antMatchers("/create-new-blog","/view-blog/{id}").hasAnyRole("USER","ADMIN")
+                .antMatchers("/delete-blog/{id}","/edit-blog/{id}").hasRole("ADMIN")
+                .anyRequest().authenticated();
     }
 
 }
