@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{/home::head}">
+    <meta charset="UTF-8">
+
+</head>
+<body>
+    <div th:replace="~{home::navbar}"></div>
+    <h1>Create Customer</h1>
+    <p>
+        <a class="btn btn-primary rounded-pill" id="backToList" th:href="@{/customer}">Back to list</a>
+    </p>
+    <div class="container">
+    <form th:action="@{/customer/create-customer}" th:object="${customer}" method="post" >
+        <table class="table" >
+            <tr>
+                <td>Name:</td>
+                <td><input class="form-control" type="text" th:field="*{nameCustomer}"></td>
+            </tr>
+            <tr>
+                <td>Birthday:</td>
+                <td><input class="form-control" type="text" th:field="*{birthday}"></td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td>
+                    <input class="form-control" type="radio" th:field="*{gender}" value="1">Male
+                    <input class="form-control" type="radio" th:field="*{gender}" value="0">Female
+                </td>
+            </tr>
+            <tr>
+                <td>ID Card:</td>
+                <td><input class="form-control" type="text" th:field="*{idCardCustomer}"></td>
+            </tr>
+            <tr>
+                <td>Phone Number:</td>
+                <td><input class="form-control" type="text" th:field="*{phoneCustomer}"></td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td><input class="form-control" type="text" th:field="*{emailCustomer}"></td>
+            </tr>
+            <tr>
+                <td>Address:</td>
+                <td><input class="form-control" type="text" th:field="*{addressCustomer}"></td>
+            </tr>
+            <tr>
+                <td>Customer Type:</td>
+                <td><select th:field="*{customerType}">
+                    <option th:each="item: ${customerTypeList}" th:value="${item.idCustomerType}" th:text="${item.nameCustomerType}" ></option>
+                </select></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input class="form-control btn-dark" type="submit" value="Create"></td>
+            </tr>
+        </table>
+    </form>
+    </div>
+    <footer th:replace="~{/home::footer}"></footer>
+</body>
+</html>

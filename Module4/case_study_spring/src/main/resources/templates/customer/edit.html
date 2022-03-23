@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{/home::head}">
+    <meta charset="UTF-8">
+
+</head>
+<body>
+<div th:replace="~{home::navbar}"></div>
+<h1>Create Customer</h1>
+<p>
+    <a class="btn btn-primary rounded-pill" th:href="@{/customer}">Back to list</a>
+</p>
+<form th:action="@{/customer/edit-customer}" th:object="${customers}" method="post">
+    <table class="table">
+        <input type="hidden" th:field="*{idCustomer}">
+        <tr>
+            <td>Name:</td>
+            <td><input class="form-control" type="text" th:field="*{nameCustomer}"></td>
+        </tr>
+        <tr>
+            <td>Birthday:</td>
+            <td><input class="form-control" type="text" th:field="*{birthday}"></td>
+        </tr>
+        <tr>
+            <td>Gender</td>
+            <td>
+                <input class="form-control" type="radio" th:field="*{gender}" value="1">Male
+                <input class="form-control" type="radio" th:field="*{gender}" value="0">Female
+            </td>
+        </tr>
+        <tr>
+            <td>ID Card:</td>
+            <td><input class="form-control" type="text" th:field="*{idCardCustomer}"></td>
+        </tr>
+        <tr>
+            <td>Phone Number:</td>
+            <td><input class="form-control" type="text" th:field="*{phoneCustomer}"></td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td><input class="form-control" type="text" th:field="*{emailCustomer}"></td>
+        </tr>
+        <tr>
+            <td>Address:</td>
+            <td><input class="form-control" type="text" th:field="*{addressCustomer}"></td>
+        </tr>
+        <tr>
+            <td>Customer Type:</td>
+            <td><select class="form-control" th:field="*{customerType}">
+                <option th:each="item: ${customerTypeList}" th:value="${item.idCustomerType}" th:text="${item.nameCustomerType}" ></option>
+            </select></td>
+        </tr>
+        <tr>
+            <td>
+                <input class="btn btn-success" type="submit" value="Update">
+                <a class="btn btn-dark rounded-pill" th:href="@{/customer}">Cancel</a>
+            </td>
+        </tr>
+    </table>
+</form>
+<footer th:replace="~{/home::footer}"></footer>
+</body>
+</html>
