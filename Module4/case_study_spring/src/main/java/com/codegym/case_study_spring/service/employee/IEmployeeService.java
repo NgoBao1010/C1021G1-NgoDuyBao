@@ -13,5 +13,5 @@ public interface IEmployeeService {
     void save(Employee employee);
     void deleteById(Long id);
     void remove(Employee employee);
-    Page<Employee> findByNameEmployee(String name, Pageable pageable);
+    Page<Employee> findByNameEmployeeContaining(String name, Pageable pageable);
 }

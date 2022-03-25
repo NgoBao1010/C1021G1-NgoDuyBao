@@ -1,19 +1,29 @@
-@import url('https://fonts.googleapis.com/css?family=Gamja+Flower');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300&display=swap');
 
 html, body {
     width: auto;
     height: auto;
-    font-family: 'Gamja Flower';
+    font-family: "Open Sans", sans-serif;
     font-size: 28px;
     color: #222;
 }
-
+.table{
+    font-size: 0.8rem;
+}
+h1{
+    text-align: center;
+}
+.sticky {
+    position: fixed;
+    top: 0;
+}
 .navbar {
     background-color: #f5f1f1 !important;
 }
 .navbar li a {
     color: black !important;
 }
+
 .navbar li a:hover {
     color: #9cd25c !important;
 }
@@ -42,7 +52,7 @@ html, body {
     border: 1px solid white;
 }
 .jumbotron {
-    padding: 1rem;
+    padding: 0.8rem;
     border-radius: 0;
 }
 .welcome hr {

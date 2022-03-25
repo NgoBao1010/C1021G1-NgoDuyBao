@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head th:fragment="head">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -12,7 +13,7 @@
 
 </head>
 <body>
-    <nav class="navbar navbar-expand-md navbar-light bg-light " th:fragment="navbar">
+    <nav class="navbar navbar-expand-md navbar-light bg-light" th:fragment="navbar">
         <a class="navbar-brand" href="/homepage">
             <img src="https://furamavietnam.com/wp-content/uploads/2018/10/logo.png"  height="80">
         </a>
@@ -22,9 +23,9 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="collapsibleNavId">
-            <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0 ">
                 <li class="nav-item">
-                    <a class="nav-link" href="/homepage">Home</a>
+                    <a class="nav-link" href="/homepage" >Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/customer">Customer</a>
@@ -33,16 +34,23 @@
                     <a class="nav-link" href="/employee">Employee</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Service</a>
+                    <a class="nav-link" href="/service">Service</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Contact</a>
                 </li>
+                <li>
+                    <div sec:authorize="isAuthenticated()">
+                        <span style="text-align: right; vertical-align: center; font-size: 25px;margin-left: 450px"  sec:authentication="principal.username"></span>
+                        <a class="btn btn-danger" style="text-align: right" th:href="@{/logout}">Log out</a>
+                    </div>
+                </li>
             </ul>
         </div>
     </nav>
+    <marquee bgcolor="" scrollamount="6" direction="right" behavior="scroll" onmouseout="this.start();" onmouseover="this.stop();"><img src="https://furamavietnam.com/wp-content/uploads/2018/10/logo.png" width=40px height=40px> Welcome to Furama Resort Danang !!!</marquee>
     <div class="jumbotron">
-        <div id="slides" class="carousel slide" data-ride="carousel">
+        <div id="slides" class="carousel slide" data-interval="3000" data-ride="carousel">
             <!-- Indicators -->
             <ul class="carousel-indicators">
                 <li data-target="#slides" data-slide-to="0" class="active"></li>
@@ -70,6 +78,7 @@
             </a>
         </div>
     </div>
+    <marquee bgcolor="" scrollamount="6" direction="left" behavior="scroll" onmouseout="this.start();" onmouseover="this.stop();"><img src="https://furamavietnam.com/wp-content/uploads/2018/10/logo.png" width=40px height=40px> Welcome to Furama Resort Danang !!!</marquee>
     <div class="row">
         <div class="col-sm-4">
             <p style="color: #cbbe73;font-size: 24px;line-height: 36px;text-align: left;font-family: Playfair Display;font-weight: 700">
@@ -97,6 +106,7 @@
                 <div class="col-3"></div>
         </div>
     </div>
+    <div th:replace="~{room::carousel-card}"></div>
 <!--    Footer-->
     <footer th:fragment="footer">
         <div class="container-fluid padding">
@@ -130,6 +140,7 @@
                     <hr class="light-100">
                     <h5>&copy; Coppy right 1995-2022</h5>
                     <p>Source code by Bảo Ngô</p>
+                    <p id="clockbox"></p>
                 </div>
             </div>
         </div>
@@ -138,8 +149,35 @@
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        function GetClock(){
+            d = new Date();
+            nday = d.getDay();
+            ndate = d.getDate();
+            nmonth = d.getMonth();
+            nyear = d.getFullYear();
+            nhour = d.getHours();
+            nmin = d.getMinutes();
+            nsec = d.getSeconds();
+            if(nyear<1000) nyear=nyear+1900;
+            if(nhour == 0) {ap = " AM";nhour = 12;}
+            else if(nhour <= 11) {ap = " AM";}
+            else if(nhour == 12) {ap = " PM";}
+            else if(nhour >= 13) {ap = " PM";nhour -= 12;}
+            if(nmin <= 9) {nmin = "0" +nmin;}
+            if(nsec <= 9) {nsec = "0" +nsec;}
+            document.getElementById('clockbox').innerHTML=""+ndate+"/"+(nmonth+1)+"/"+nyear+" "+nhour+":"+nmin+":"+nsec+ap+"";
+            setTimeout("GetClock()", 1000);
+        }
+        window.onload=GetClock;
+
+        // $('.carousel').carousel({
+        //     interval: 2000
+        // })
+    </script>
+
 </body>
 </html>

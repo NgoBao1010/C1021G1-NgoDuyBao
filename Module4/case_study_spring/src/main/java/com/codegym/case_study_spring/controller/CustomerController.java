@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.util.Optional;
+
 @Controller
 @RequestMapping("/customer")
 public class CustomerController {
@@ -29,17 +31,15 @@ public class CustomerController {
         return modelAndView;
     }
     @GetMapping("/search")
-    public ModelAndView searchCustomer(@RequestParam(defaultValue = "") String name, @PageableDefault(value = 5)
+    public ModelAndView searchCustomer(@RequestParam(defaultValue = "nameSearch") Optional<String> nameSearch, @PageableDefault(value = 3)
             Pageable pageable) {
-
         Page<Customer> customerPage;
-        if (name != null) {
-            customerPage = customerService.findByNameCustomer(name, pageable);
-        } else {
+        if (nameSearch.isPresent()){
+            customerPage = customerService.findByNameCustomerContaining(nameSearch.get(), pageable);
+        }else {
             customerPage = customerService.findAll(pageable);
         }
-
-        return new ModelAndView("customer/list", "customers", customerPage);
+        return new ModelAndView("customer/list", "customerList", customerPage);
     }
     @GetMapping("/create-customer")
     public ModelAndView showCreateForm() {

@@ -1,6 +1,5 @@
 package com.codegym.case_study_spring.model.service;
 
-import com.codegym.case_study_spring.model.employee.Employee;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
@@ -10,9 +9,9 @@ import java.util.Set;
 public class RentType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idRentType;
+    private Long idRentType;
     private String nameRentType;
-    private double costRentType;
+    private Double costRentType;
 
     @OneToMany(mappedBy = "rentType",cascade = CascadeType.ALL)
     @JsonManagedReference
@@ -21,11 +20,11 @@ public class RentType {
     public RentType() {
     }
 
-    public int getIdRentType() {
+    public Long getIdRentType() {
         return idRentType;
     }
 
-    public void setIdRentType(int idRentType) {
+    public void setIdRentType(Long idRentType) {
         this.idRentType = idRentType;
     }
 
@@ -37,11 +36,11 @@ public class RentType {
         this.nameRentType = nameRentType;
     }
 
-    public double getCostRentType() {
+    public Double getCostRentType() {
         return costRentType;
     }
 
-    public void setCostRentType(double costRentType) {
+    public void setCostRentType(Double costRentType) {
         this.costRentType = costRentType;
     }
 

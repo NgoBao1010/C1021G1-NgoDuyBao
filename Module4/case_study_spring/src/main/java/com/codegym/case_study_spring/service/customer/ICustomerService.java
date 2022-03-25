@@ -14,5 +14,5 @@ public interface ICustomerService {
     void save(Customer customer);
     void deleteById(Long id);
     void remove(Customer customer);
-    Page<Customer> findByNameCustomer(String name, Pageable pageable);
+    Page<Customer> findByNameCustomerContaining(String name, Pageable pageable);
 }

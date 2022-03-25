@@ -9,7 +9,7 @@ import java.util.Set;
 public class ServiceType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idServiceType;
+    private Long idServiceType;
     private String nameServiceType;
 
     @OneToMany(mappedBy = "serviceType",cascade = CascadeType.ALL)
@@ -19,11 +19,11 @@ public class ServiceType {
     public ServiceType() {
     }
 
-    public int getIdServiceType() {
+    public Long getIdServiceType() {
         return idServiceType;
     }
 
-    public void setIdServiceType(int idServiceType) {
+    public void setIdServiceType(Long idServiceType) {
         this.idServiceType = idServiceType;
     }
 

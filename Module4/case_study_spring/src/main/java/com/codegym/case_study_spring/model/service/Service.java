@@ -1,7 +1,5 @@
 package com.codegym.case_study_spring.model.service;
 
-import com.codegym.case_study_spring.model.employee.Division;
-import com.codegym.case_study_spring.model.employee.Position;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
@@ -10,15 +8,15 @@ import javax.persistence.*;
 public class Service {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idService;
+    private Long idService;
     private String nameService;
-    private int areaService;
-    private double costService;
-    private int maxPeople;
+    private Integer areaService;
+    private Double costService;
+    private Integer maxPeople;
     private String roomStandard;
     private String description;
-    private double poolArea;
-    private int numberOfFloors;
+    private Double poolArea;
+    private Integer numberOfFloors;
 
     @ManyToOne
     @JoinColumn(name = "rent_type_id", referencedColumnName = "idRentType")
@@ -33,11 +31,11 @@ public class Service {
     }
 
 
-    public int getIdService() {
+    public Long getIdService() {
         return idService;
     }
 
-    public void setIdService(int idService) {
+    public void setIdService(Long idService) {
         this.idService = idService;
     }
 
@@ -49,27 +47,27 @@ public class Service {
         this.nameService = nameService;
     }
 
-    public int getAreaService() {
+    public Integer getAreaService() {
         return areaService;
     }
 
-    public void setAreaService(int areaService) {
+    public void setAreaService(Integer areaService) {
         this.areaService = areaService;
     }
 
-    public double getCostService() {
+    public Double getCostService() {
         return costService;
     }
 
-    public void setCostService(double costService) {
+    public void setCostService(Double costService) {
         this.costService = costService;
     }
 
-    public int getMaxPeople() {
+    public Integer getMaxPeople() {
         return maxPeople;
     }
 
-    public void setMaxPeople(int maxPeople) {
+    public void setMaxPeople(Integer maxPeople) {
         this.maxPeople = maxPeople;
     }
 
@@ -89,19 +87,19 @@ public class Service {
         this.description = description;
     }
 
-    public double getPoolArea() {
+    public Double getPoolArea() {
         return poolArea;
     }
 
-    public void setPoolArea(double poolArea) {
+    public void setPoolArea(Double poolArea) {
         this.poolArea = poolArea;
     }
 
-    public int getNumberOfFloors() {
+    public Integer getNumberOfFloors() {
         return numberOfFloors;
     }
 
-    public void setNumberOfFloors(int numberOfFloors) {
+    public void setNumberOfFloors(Integer numberOfFloors) {
         this.numberOfFloors = numberOfFloors;
     }
 

@@ -11,4 +11,9 @@ public class FuramaController {
     public String homepage(){
         return "home";
     }
+
+    @GetMapping("/loginPage")
+    public String loginPage(){
+        return "login";
+    }
 }

@@ -1,10 +1,7 @@
 package com.codegym.case_study_spring.controller;
 
 import com.codegym.case_study_spring.model.employee.Employee;
-import com.codegym.case_study_spring.service.employee.IDivisionService;
-import com.codegym.case_study_spring.service.employee.IEducationDegreeService;
-import com.codegym.case_study_spring.service.employee.IEmployeeService;
-import com.codegym.case_study_spring.service.employee.IPositionService;
+import com.codegym.case_study_spring.service.employee.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -13,6 +10,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/employee")
@@ -29,6 +28,8 @@ public class EmployeeController {
     @Autowired
     private IPositionService positionService;
 
+    @Autowired
+    private IUserService userService;
     @GetMapping
     private ModelAndView showList(@PageableDefault(value = 3)Pageable pageable){
         ModelAndView modelAndView = new ModelAndView("employee/list");
@@ -37,17 +38,16 @@ public class EmployeeController {
     }
 
     @GetMapping("/search")
-    public ModelAndView showListEmployee(@RequestParam(defaultValue = "") String name, @PageableDefault(value = 5)
+    public ModelAndView showListEmployee(@RequestParam(defaultValue = "searchName") Optional<String> searchName, @PageableDefault(value = 3)
             Pageable pageable) {
 
         Page<Employee> employeePage;
-        if (name != null) {
-            employeePage = employeeService.findByNameEmployee(name, pageable);
-        } else {
+        if (searchName.isPresent()){
+            employeePage = employeeService.findByNameEmployeeContaining(searchName.get(), pageable);
+        }else {
             employeePage = employeeService.findAll(pageable);
         }
-
-        return new ModelAndView("employee/list", "employees", employeePage);
+        return new ModelAndView("employee/list", "employeeList", employeePage);
     }
 
     @GetMapping("/create-employee")
@@ -57,11 +57,12 @@ public class EmployeeController {
         modelAndView.addObject("divisionList", divisionService.findAll());
         modelAndView.addObject("educationList", educationDegreeService.findAll());
         modelAndView.addObject("positionList", positionService.findAll());
+        modelAndView.addObject("userList", userService.findAll());
         return modelAndView;
     }
 
     @PostMapping("/create-employee")
-    public String saveEmployee(Employee employee, RedirectAttributes redirectAttributes) {
+    public String saveEmployee(@ModelAttribute("employee") Employee employee, RedirectAttributes redirectAttributes) {
 
         employeeService.save(employee);
         redirectAttributes.addFlashAttribute("message", "Thêm mới thành công");
@@ -76,6 +77,7 @@ public class EmployeeController {
             modelAndView.addObject("divisionList", divisionService.findAll());
             modelAndView.addObject("educationList", educationDegreeService.findAll());
             modelAndView.addObject("positionList", positionService.findAll());
+            modelAndView.addObject("userList", userService.findAll());
             modelAndView.addObject("employees", employee);
             return modelAndView;
 
@@ -90,7 +92,7 @@ public class EmployeeController {
         employeeService.save(employee);
         return ("redirect:/employee");
     }
-    @GetMapping("/delete-employee")
+    @GetMapping("/delete/{id}")
     public String delete(@RequestParam Long id , RedirectAttributes redirectAttributes){
         Employee employee= employeeService.findById(id);
         employeeService. remove(employee);

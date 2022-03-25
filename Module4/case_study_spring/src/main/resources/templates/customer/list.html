@@ -1,20 +1,32 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head th:replace="~{/home::head}">
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 </head>
 <body>
-    <div th:replace="~{home::navbar}"></div>
-    <h1>List Customer</h1>
+<div th:replace="~{home::navbar}"></div>
+<h1>List Customer</h1>
+<div class="container">
+    <div class="alert alert-success alert-dismissible fade show" th:if="${message}">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <p th:text="${message}"></p>
+    </div>
+</div>
+<div sec:authorize="isAuthenticated()">
     <div class="container-fluid">
         <div class="row">
             <div class="col-12 d-flex justify-content-between">
-                <div>
-                    <a th:href="@{/customer/create-customer}" class="btn btn-success rounded-pill">Create New Customer</a>
+                <div sec:authorize="hasRole('ADMIN')">
+                    <div>
+                        <a th:href="@{/customer/create-customer}" class="btn btn-success rounded-pill">Create New
+                            Customer</a>
+                    </div>
                 </div>
                 <div>
-                    <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <form class="form-inline my-2 my-lg-0" action="/customer/search" method="get">
+                        <input class="form-control mr-sm-2" type="text" name="nameSearch" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-success my-2 my-sm-0 p-2" type="submit">Search</button>
                     </form>
                 </div>
@@ -29,7 +41,9 @@
             <th>Phone</th>
             <th>Email</th>
             <th>Customer Type</th>
-            <th></th>
+            <div sec:authorize="hasRole('ADMIN')">
+                <th></th>
+            </div>
         </tr>
         <th:block th:each="item : ${customerList}">
             <tr>
@@ -38,50 +52,66 @@
                 <td th:text="${item.phoneCustomer}"></td>
                 <td th:text="${item.emailCustomer}"></td>
                 <td th:text="${item.customerType.nameCustomerType}"></td>
-                <td>
-                    <a class="btn btn-primary rounded-pill" th:href="@{/customer/edit-customer/__${item.idCustomer}__}">Edit</a> ||
-                    <button class="btn btn-danger rounded-pill" th:data-param1="${item.idCustomer}" th:data-param2="${item.nameCustomer}"
-                            onclick="deleteID(this.getAttribute('data-param1'),this.getAttribute('data-param2'))"
-                            data-toggle="modal" data-target="#modelId">Delete</button>
-                </td>
+                <div sec:authorize="hasRole('ADMIN')">
+                    <td>
+                        <a class="btn btn-primary rounded-pill"
+                           th:href="@{/customer/edit-customer/__${item.idCustomer}__}">Edit</a>
+                        ||
+                        <button class="btn btn-danger rounded-pill" th:data-param1="${item.idCustomer}"
+                                th:data-param2="${item.nameCustomer}"
+                                onclick="deleteID(this.getAttribute('data-param1'),this.getAttribute('data-param2'))"
+                                data-toggle="modal" data-target="#modelId">Delete
+                        </button>
+                    </td>
+                </div>
             </tr>
         </th:block>
     </table>
-    <div class="col-md-3">
-        <a th:href="@{'/customer'(page = ${customerList.number -1})}"
-           th:if="${customerList.hasPrevious()}" class="btn btn-outline-primary rounded-pill">Previous</a>
-        <span th:text="${customerList.number + 1}"></span>/<span th:text="${customerList.totalPages}"></span>
-        <a th:href="@{'/customer'(page = ${customerList.number + 1})}" th:if="${customerList.hasNext()}"
-           class="btn btn-outline-primary rounded-pill">NEXT</a>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6" style="text-align: center">
+            <a th:href="@{'/customer'(page = ${customerList.number -1})}"
+               th:if="${customerList.hasPrevious()}" class="btn btn-outline-primary rounded-pill">Previous</a>
+            <span th:text="${customerList.number + 1}"></span>/<span th:text="${customerList.totalPages}"></span>
+            <a th:href="@{'/customer'(page = ${customerList.number + 1})}" th:if="${customerList.hasNext()}"
+               class="btn btn-outline-primary rounded-pill">NEXT</a>
+        </div>
+        <div class="col-3"></div>
     </div>
-    <!-- Modal -->
-    <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Modal title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p>Do you want delete <span style="color: red" id="deleteId"></span> ???</p>
-                </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                        <a type="button" class="btn btn-info" id="accept">OK</a>
-                    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Do you want delete <span style="color: red" id="deleteId"></span> ???</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <a type="button" class="btn btn-info" id="accept">OK</a>
             </div>
         </div>
     </div>
-    <footer th:replace="~{/home::footer}"></footer>
+</div>
+<footer th:replace="~{/home::footer}"></footer>
 
 <!--    Java Scrip-->
-    <script>
-        function deleteID(id,name){
-            document.getElementById("deleteId").innerText = name;
-            document.getElementById("accept").href = "customer/delete/"+id;
-        }
-    </script>
+<script>
+    function deleteID(id, name) {
+        document.getElementById("deleteId").innerText = name;
+        document.getElementById("accept").href = "customer/delete/" + id;
+    }
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 </body>
 </html>
