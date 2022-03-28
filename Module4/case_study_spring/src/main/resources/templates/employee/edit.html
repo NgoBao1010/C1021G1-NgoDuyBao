@@ -59,12 +59,12 @@
                 <option th:each="item: ${educationList}" th:value="${item.idEducation}" th:text="${item.nameEducation}" ></option>
             </select></td>
         </tr>
-        <tr>
-            <td>User Type:</td>
-            <td><select th:field="*{user}">
-                <option th:each="item: ${userList}" th:value="${item.id}" th:text="${item.userName}" ></option>
-            </select></td>
-        </tr>
+<!--        <tr>-->
+<!--            <td>User Type:</td>-->
+<!--            <td><select th:field="*{user}">-->
+<!--                <option th:each="item: ${userList}" th:value="${item.id}" th:text="${item.userName}" ></option>-->
+<!--            </select></td>-->
+<!--        </tr>-->
         <tr>
             <td>
                 <input class="btn btn-success" type="submit" value="Update">

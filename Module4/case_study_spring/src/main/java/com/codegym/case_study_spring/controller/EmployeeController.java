@@ -29,6 +29,9 @@ public class EmployeeController {
     private IPositionService positionService;
 
     @Autowired
+    private IRoleService roleService;
+
+    @Autowired
     private IUserService userService;
     @GetMapping
     private ModelAndView showList(@PageableDefault(value = 3)Pageable pageable){
@@ -57,7 +60,7 @@ public class EmployeeController {
         modelAndView.addObject("divisionList", divisionService.findAll());
         modelAndView.addObject("educationList", educationDegreeService.findAll());
         modelAndView.addObject("positionList", positionService.findAll());
-        modelAndView.addObject("userList", userService.findAll());
+//        modelAndView.addObject("userList", roleService.findAll());
         return modelAndView;
     }
 
@@ -77,7 +80,7 @@ public class EmployeeController {
             modelAndView.addObject("divisionList", divisionService.findAll());
             modelAndView.addObject("educationList", educationDegreeService.findAll());
             modelAndView.addObject("positionList", positionService.findAll());
-            modelAndView.addObject("userList", userService.findAll());
+//            modelAndView.addObject("userList", roleService.findAll());
             modelAndView.addObject("employees", employee);
             return modelAndView;
 
