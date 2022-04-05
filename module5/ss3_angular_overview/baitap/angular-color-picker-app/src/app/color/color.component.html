@@ -1,0 +1,7 @@
+<h1>Ứng dụng color picker</h1>
+<h4>Vui lòng chọn màu: </h4>
+<p [style.background]="color" style="width: 100px;height: 100px"></p>
+<select [(ngModel)]="color">
+  <option *ngFor="let item of colorList" >{{item}}</option>
+
+</select>

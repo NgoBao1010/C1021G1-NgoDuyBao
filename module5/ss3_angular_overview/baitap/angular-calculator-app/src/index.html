@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>AngularCalculatorApp</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+  <app-root></app-root>
+
+  <script>
+
+    function xoaManHinh() {
+      document.getElementById("mAnHinh").value = "";
+    }
+
+    function anVao(value) {
+      document.getElementById("mAnHinh").value = document.getElementById("mAnHinh").value + value;
+    }
+
+    function tinhToan() {
+      let a = document.getElementById("mAnHinh").value;
+      let b = eval(a);
+      document.getElementById("mAnHinh").value = b;
+    }
+  </script>
+</body>
+</html>
