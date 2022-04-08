@@ -1,0 +1,144 @@
+<section class="vh-100 gradient-custom">
+  <div class="container py-5 h-100">
+    <div class="row justify-content-center align-items-center h-100">
+      <div class="col-12 col-lg-9 col-xl-7">
+        <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+          <div class="card-body p-4 p-md-5">
+            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Registration</h3>
+            <form [formGroup]="register" (ngSubmit)="submit()">
+
+              <div class="row">
+                <div class="col-md-6 mb-4">
+
+                  <div class="form-outline">
+                    <input formControlName="email" name="email" type="text" id="firstName" class="form-control form-control-lg" />
+                    <div class="alert-danger" *ngIf="register.controls.email.errors.required && register.controls.email.touched">
+                      Không được để trống.
+                    </div>
+                    <label  class="form-label" for="firstName">Email</label>
+                  </div>
+
+
+
+                </div>
+                <div class="col-md-6 mb-4">
+
+                  <div class="form-outline">
+                    <input type="password" formControlName="password" id="password" class="form-control form-control-lg" />
+                    <div *ngIf="register.controls.password.touched && register.controls.password.invalid" class="alert alert-danger">
+                      <div *ngIf="register.controls.password.errors.required">Password is required.</div>
+                    </div>
+                    <label  class="form-label" for="password">Password</label>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-4 d-flex align-items-center">
+
+                  <div class="form-outline datepicker w-100">
+                    <input
+                      formControlName="confirmPassword"
+                      type="password"
+                      class="form-control form-control-lg"
+                      id="confirmPassword"
+                    />
+                    <div *ngIf="register.controls.confirmPassword.touched && register.controls.confirmPassword.invalid" class="alert alert-danger">
+                      <div *ngIf="register.controls.confirmPassword.errors.required">Password is required.</div>
+                      <div *ngIf="register.controls.confirmPassword.errors.confirmedValidator">Password and Confirm Password must be match.</div>
+                    </div>
+                    <label for="confirmPassword" class="form-label">Confirm Password</label>
+                  </div>
+
+                </div>
+                <div class="col-md-6 mb-4">
+                  <h6 class="mb-2 pb-1">Gender: </h6>
+                  <div class="form-check form-check-inline" >
+                    <input
+                      formControlName="gender"
+                      class="form-check-input"
+                      type="radio"
+                      id="femaleGender"
+                      value="Female"
+                      checked
+                    />
+
+                    <label class="form-check-label" for="femaleGender">Female</label>
+                    <input
+                      formControlName="gender"
+                      class="form-check-input"
+                      type="radio"
+                      id="maleGender"
+                      value="Male"
+                    />
+                    <label class="form-check-label" for="maleGender">Male</label>
+
+
+                    <input
+                      formControlName="gender"
+                      class="form-check-input"
+                      type="radio"
+                      id="otherGender"
+                      value="Other"
+                    />
+
+                    <label class="form-check-label"  for="otherGender">Other</label>
+                  </div>
+                  <div class="alert-danger" *ngIf="register.controls.gender.errors.required && register.controls.gender.touched">
+                    Không được để trống
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-4 pb-2">
+
+                  <div class="form-outline">
+                    <input formControlName="age" name="age" type="text" id="age" class="form-control form-control-lg" />
+                    <div class="alert-danger" *ngIf="register.controls.age.errors.required && register.controls.age.dirty">
+                      Không được để trống
+                    </div>
+                    <label class="form-label" for="age">Age</label>
+                  </div>
+
+                </div>
+                <div class="col-md-6 mb-4 pb-2">
+
+                  <div class="form-outline">
+                    <input formControlName="phone" name="phone" type="tel" id="phoneNumber" class="form-control form-control-lg" />
+                    <div class="alert-danger" *ngIf="register.controls.phone.errors.required && register.controls.phone.touched">
+                      Không được để trống
+                    </div>
+                    <label class="form-label" for="phoneNumber">Phone Number</label>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-12">
+
+                  <select formControlName="country" name="country" class="select form-control-lg">
+                    <option value="select" selected disabled>Choose option</option>
+                    <option value="Việt Nam">Việt Nam</option>
+                    <option value="Nhật Bản">Nhật Bản</option>
+                    <option value="Hàn Quốc">Hàn Quốc</option>
+                  </select>
+                  <label class="form-label select-label">Country</label>
+
+                </div>
+              </div>
+
+              <div class="mt-4 pt-2">
+                <input class="btn btn-primary btn-lg" type="submit"   value="Submit" />
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
