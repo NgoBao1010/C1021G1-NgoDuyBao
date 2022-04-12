@@ -1,0 +1,8 @@
+<h1>Dictionary</h1>
+<div>
+  <table>
+    <tr *ngFor="let item of dictionaryList">
+      <td><a [routerLink]="['/dictionary/search/',item.keyword]">{{item.keyword}}</a></td>
+    </tr>
+  </table>
+</div>
