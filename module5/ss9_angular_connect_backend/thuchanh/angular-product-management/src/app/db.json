@@ -1,0 +1,46 @@
+{
+  "product": [
+    {
+      "id": 2,
+      "productName": "IPhone 12 Pro max",
+      "price": "100.000",
+      "description": "Like new",
+      "category": "Điện thoại"
+    },
+    {
+      "id": 3,
+      "productName": "IPhone 13 Pro max",
+      "price": "100.000",
+      "description": "Like new",
+      "category": "Điện thoại"
+    },
+    {
+      "id": 4,
+      "productName": "IPhone 13 Pro max",
+      "price": "100.000",
+      "description": "Like new",
+      "category": "Điện thoại"
+    },
+    {
+      "id": 5,
+      "productName": "IPhone 13 Pro max",
+      "price": "100.000",
+      "description": "Like new",
+      "category": "Điện thoại"
+    }
+  ],
+  "category": [
+    {
+      "id": 1,
+      "name": "Điện thoại"
+    },
+    {
+      "id": 2,
+      "name": "Tivi"
+    },
+    {
+      "id": 3,
+      "name": "Tủ Lạnh"
+    }
+  ]
+}
