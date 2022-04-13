@@ -1,0 +1,29 @@
+{
+  "todo": [
+    {
+      "id": 1,
+      "content": "Thuận iu",
+      "complete": "true"
+    },
+    {
+      "id": 2,
+      "content": "Thuận khùng",
+      "complete": "true"
+    },
+    {
+      "id": 3,
+      "content": "Thuận dở hơi",
+      "complete": "true"
+    },
+    {
+      "id": 4,
+      "content": "Thuận tró",
+      "complete": "true"
+    },
+    {
+      "id": 5,
+      "content": "Thuận cà chớn",
+      "complete": "true"
+    }
+  ]
+}
