@@ -7,7 +7,7 @@ import {ProductDeleteComponent} from "./product/product-delete/product-delete.co
 
 
 const routes: Routes = [{
-  path: '',
+  path: 'product/list',
   component: ProductListComponent
 },
   {
