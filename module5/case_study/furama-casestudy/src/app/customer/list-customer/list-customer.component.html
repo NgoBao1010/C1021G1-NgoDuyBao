@@ -1,0 +1,31 @@
+<h1>List Customer</h1>
+<a class="btn btn-outline-success" routerLink="/customer/create">Create New Customer</a>
+
+<div>
+  <table class="table table-secondary table-hover" style="text-align: center">
+    <thead class="thead-dark">
+    <tr >
+      <th>Name</th>
+      <th>Code</th>
+      <th>Gender</th>
+      <th>Phone</th>
+      <th>Customer Type</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let customer of customerList">
+        <td>{{customer.name | titlecase}}</td>
+        <td>{{customer.customerCode}}</td>
+        <td>{{customer.gender | titlecase}}</td>
+        <td>{{customer.phoneNumber}}</td>
+        <td>{{customer.customerType.name}}</td>
+        <td colspan="2">
+          <button class="btn m-2 btn-info">Detail</button>
+          <button class="btn m-2 btn-success">Edit</button>
+          <button class="btn m-2 btn-danger">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

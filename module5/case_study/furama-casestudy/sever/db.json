@@ -1,0 +1,142 @@
+{
+  "customer": [
+    {
+      "id": 1,
+      "name": "Ngô Duy Bảo",
+      "customerCode": "CTM-0001",
+      "dateOfBirth": "10-10-1995",
+      "gender": "male",
+      "idCard": "201705898",
+      "phoneNumber": "0979642710",
+      "email": "ngoduybao1010@gmail.com",
+      "address": "72 Hàm Nghi, Đà Nẵng",
+      "customerType": {
+        "id": 1,
+        "name": "Gold"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Hồ Nhật Hiếu",
+      "customerCode": "CTM-0002",
+      "dateOfBirth": "15-11-1997",
+      "gender": "male",
+      "idCard": "201999222",
+      "phoneNumber": "0979642727",
+      "email": "hieuho@gmail.com",
+      "address": "Hội An, Quảng Nam",
+      "customerType": {
+        "id": 1,
+        "name": "Gold"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Phạm Duy Thuận",
+      "customerCode": "CTM-0003",
+      "dateOfBirth": "19-12-2003",
+      "gender": "female",
+      "idCard": "201222222",
+      "phoneNumber": "0782888888",
+      "email": "thuanpham@gmail.com",
+      "address": "Điện Hồng, Quảng Nam",
+      "customerType": {
+        "id": 1,
+        "name": "Gold"
+      }
+    },
+    {
+      "id": 4,
+      "name": "nguyễn văn ngọc đạt",
+      "customerCode": "CTM-0004",
+      "dateOfBirth": "26-02-2003",
+      "gender": "female",
+      "idCard": "291829292",
+      "phoneNumber": "0989929929",
+      "email": "ngocdat@gmail.com",
+      "address": "Quảng Trị",
+      "customerType": {
+        "id": 1,
+        "name": "Gold"
+      }
+    },
+    {
+      "id": 5,
+      "name": "nguyễn anh hoàng",
+      "customerCode": "CTM-0005",
+      "dateOfBirth": "14-10-1996",
+      "gender": "male",
+      "idCard": "231154555",
+      "phoneNumber": "0782645555",
+      "email": "anhhoang@gmail.com",
+      "address": "Bình Định",
+      "customerType": {
+        "id": 1,
+        "name": "Gold"
+      }
+    },
+    {
+      "id": 6,
+      "name": "Đặng Duy Linh",
+      "customerCode": "CTM-0006",
+      "dateOfBirth": "27-01-1993",
+      "gender": "male",
+      "idCard": "258456951",
+      "phoneNumber": "01234567890",
+      "email": "duylinhdang@gmail.com",
+      "address": "Đà Nẵng",
+      "customerType": {
+        "id": 1,
+        "name": "Gold"
+      }
+    },
+    {
+      "id": 7,
+      "name": "nguyễn thanh tâm",
+      "customerCode": "CTM-0007",
+      "dateOfBirth": "10-09-1998",
+      "gender": "male",
+      "idCard": "291929929",
+      "phoneNumber": "0372306482",
+      "email": "thanhtam@gmail.com",
+      "address": "Đà Nẵng",
+      "customerType": {
+        "id": 1,
+        "name": "Gold"
+      }
+    },
+    {
+      "id": 8,
+      "name": "Đặng Duy Linh già",
+      "customerCode": "CTM-0008",
+      "dateOfBirth": "1993-08-23",
+      "gender": "Female",
+      "idCard": "205489666",
+      "phoneNumber": "0978555555",
+      "email": "duylinh@gmail.com",
+      "address": "74 Tô Hiệu",
+      "customerType": {
+        "id": 3,
+        "name": "Diamond"
+      }
+    }
+  ],
+  "customerType": [
+    {
+      "id": 1,
+      "name": "Gold"
+    },
+    {
+      "id": 2,
+      "name": "Silver"
+    },
+    {
+      "id": 3,
+      "name": "Diamond"
+    },
+    {
+      "id": 4,
+      "name": "Member"
+    }
+  ]
+}
